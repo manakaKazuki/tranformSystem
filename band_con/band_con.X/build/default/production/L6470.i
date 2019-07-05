@@ -20045,7 +20045,7 @@ unsigned char SPI_transfer(char dt) ;
 # 21 "L6470.c" 2
 
 # 1 "./L6470.h" 1
-# 58 "./L6470.h"
+# 64 "./L6470.h"
 union STEP_MODE_t {
      unsigned char DT ;
      struct {
@@ -20079,6 +20079,7 @@ int L6470_ALARM() ;
 void L6470_Run(char dir,unsigned long speed) ;
 void L6470_Move(char dir,unsigned long step) ;
 void L6470_Stop(int mode) ;
+void L6470_CMD(int command);
 # 22 "L6470.c" 2
 
 
@@ -20219,5 +20220,12 @@ void L6470_Stop(int mode)
      while( (Busy==0) && (PORTBbits.RB1==0) ) ;
      PORTBbits.RB0 = 0 ;
      SPI_transfer(cmd[mode]) ;
+     PORTBbits.RB0 = 1 ;
+}
+
+void L6470_CMD(int command){
+    while( (Busy==0) && (PORTBbits.RB1==0) ) ;
+     PORTBbits.RB0 = 0 ;
+     SPI_transfer(command) ;
      PORTBbits.RB0 = 1 ;
 }

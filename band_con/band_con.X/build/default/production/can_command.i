@@ -20144,30 +20144,30 @@ typedef union {
     } frame;
     uint8_t array[14];
 } uCAN_MSG;
-# 118 "./mcc_generated_files/ecan.h"
+# 120 "./mcc_generated_files/ecan.h"
 void ECAN_Initialize(void);
-# 140 "./mcc_generated_files/ecan.h"
+# 142 "./mcc_generated_files/ecan.h"
 void CAN_sleep(void);
-# 161 "./mcc_generated_files/ecan.h"
+# 163 "./mcc_generated_files/ecan.h"
 uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
-# 185 "./mcc_generated_files/ecan.h"
+# 187 "./mcc_generated_files/ecan.h"
 uint8_t CAN_receive(uCAN_MSG *tempCanMsg);
-# 207 "./mcc_generated_files/ecan.h"
+# 209 "./mcc_generated_files/ecan.h"
 uint8_t CAN_messagesInBuffer(void);
-# 231 "./mcc_generated_files/ecan.h"
+# 233 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isBusOff(void);
-# 255 "./mcc_generated_files/ecan.h"
+# 257 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isRXErrorPassive(void);
-# 279 "./mcc_generated_files/ecan.h"
+# 281 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isTXErrorPassive(void);
 # 11 "./can_command.h" 2
 # 22 "./can_command.h"
-void can_recieve(uCAN_MSG rxMessage);
+unsigned char can_recieve(uCAN_MSG rxMessage);
 # 2 "can_command.c" 2
 
 
 # 1 "./L6470.h" 1
-# 58 "./L6470.h"
+# 64 "./L6470.h"
 union STEP_MODE_t {
      unsigned char DT ;
      struct {
@@ -20201,6 +20201,7 @@ int L6470_ALARM() ;
 void L6470_Run(char dir,unsigned long speed) ;
 void L6470_Move(char dir,unsigned long step) ;
 void L6470_Stop(int mode) ;
+void L6470_CMD(int command);
 # 4 "can_command.c" 2
 
 # 1 "./L6470_SPI.h" 1
@@ -20285,12 +20286,8 @@ void delay_ms(long time);
 # 19 "./servo.h"
 void ServoOut(int angle);
 # 6 "can_command.c" 2
-
-
-union {
-    unsigned char c[8] ;
-    unsigned int i;
-} data ;
+# 15 "can_command.c"
+unsigned char data[8];
 
 unsigned long L6470_change(unsigned char *dt, int num){
     int i;
@@ -20303,14 +20300,28 @@ unsigned long L6470_change(unsigned char *dt, int num){
 }
 
 void L6470_command(void){
-    switch(data.c[1]){
+    switch(data[2]){
         case 0x00:
-            L6470_Stop(data.c[2]);
-        case 0x50:
-            L6470_Run(data.c[2],L6470_change(&data.c[3],3));
+            L6470_Stop(data[7]);
             break;
-        case 0x40:
-            L6470_Move(data.c[2],L6470_change(&data.c[3],3));
+        case 0x01:
+            L6470_Run(data[3],L6470_change(&data[4],3));
+            break;
+        case 0x02:
+            L6470_Move(data[3],L6470_change(&data[4],3));
+            break;
+        case 0x03:
+            L6470_CMD(0x70);
+            break;
+        case 0x04:
+            L6470_CMD(0xC0);
+            break;
+        case 0x05:
+            while(PORTBbits.RB5){
+                L6470_Run(0,30000);
+            }
+            L6470_Stop(1);
+            L6470_CMD(0xD8);
             break;
         default:
             break;
@@ -20318,33 +20329,28 @@ void L6470_command(void){
     }
 }
 
-void can_recieve(uCAN_MSG rxMessage){
-     unsigned char buf[12] ;
+unsigned char can_recieve(uCAN_MSG rxMessage){
+
 
 
      if (rxMessage.frame.idType == 1) {
-          switch (rxMessage.frame.id) {
-            case 0x123 :
-                data.c[0] = rxMessage.frame.data0 ;
-                data.c[1] = rxMessage.frame.data1 ;
-                data.c[2] = rxMessage.frame.data2 ;
-                data.c[3] = rxMessage.frame.data3 ;
-                data.c[4] = rxMessage.frame.data4 ;
-                data.c[5] = rxMessage.frame.data5 ;
-                data.c[6] = rxMessage.frame.data6 ;
-                data.c[7] = rxMessage.frame.data7 ;
-                switch(data.c[0]){
-                    case 0x01:
-                        ServoOut(data.c[1]);
-                        break;
-                    case 0x10:
-                        L6470_command();
-                    default:
-                        break;
-                }
-                break ;
-            default :
-                break ;
-          }
+
+
+         if(rxMessage.frame.id == 0x102){
+                data[0] = rxMessage.frame.data0 ;
+                data[1] = rxMessage.frame.data1 ;
+                data[2] = rxMessage.frame.data2 ;
+                data[3] = rxMessage.frame.data3 ;
+                data[4] = rxMessage.frame.data4 ;
+                data[5] = rxMessage.frame.data5 ;
+                data[6] = rxMessage.frame.data6 ;
+                data[7] = rxMessage.frame.data7 ;
+                ServoOut(data[1]);
+                L6470_command();}
+
+
+
+
      }
+     return data;
 }

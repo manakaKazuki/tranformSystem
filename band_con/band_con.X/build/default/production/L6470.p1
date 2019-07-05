@@ -17,24 +17,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69 ./SPIlib.h
 [; ;./SPIlib.h: 69: unsigned char SPI_transfer(char dt) ;
 [v _SPI_transfer `(uc ~T0 @X0 0 ef1`uc ]
-"60 ./L6470.h
-[; ;./L6470.h: 60:      struct {
+"66 ./L6470.h
+[; ;./L6470.h: 66:      struct {
 [s S1527 :3 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
 [n S1527 . STEP_SEL SP SYNC_SEL SYNC_EN ]
-"58
-[; ;./L6470.h: 58: union STEP_MODE_t {
+"64
+[; ;./L6470.h: 64: union STEP_MODE_t {
 [u S1526 `uc 1 `S1527 1 ]
 [n S1526 STEP_MODE_t DT . ]
-"70
-[; ;./L6470.h: 70:      struct {
+"76
+[; ;./L6470.h: 76:      struct {
 [s S1529 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :3 `uc 1 :3 `uc 1 ]
 [n S1529 . OSC_SEL EXT_CLK SW_MODE EN_VSCPMP SP OC_SD POW_SR F_PWM_DEC F_PWM_INT ]
-"68
-[; ;./L6470.h: 68: union CONFIG_t {
+"74
+[; ;./L6470.h: 74: union CONFIG_t {
 [u S1528 `ui 1 `S1529 1 ]
 [n S1528 CONFIG_t DT . ]
-"86
-[; ;./L6470.h: 86: unsigned long L6470_GetRegister(char regadrs,int num) ;
+"92
+[; ;./L6470.h: 92: unsigned long L6470_GetRegister(char regadrs,int num) ;
 [v _L6470_GetRegister `(ul ~T0 @X0 0 ef2`uc`i ]
 "30015 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 30015:     struct {
@@ -1887,8 +1887,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "206
 [; ;L6470.c: 206: {
 [f ]
-[v F12229 `uc ~T0 @X0 -> 4 `i s ]
-[i F12229
+[v F12231 `uc ~T0 @X0 -> 4 `i s ]
+[i F12231
 :U ..
 "207
 [; ;L6470.c: 207:      unsigned char cmd[4] = {0xB0,0xB8,0xA0,0xA8} ;
@@ -1899,7 +1899,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _cmd `uc ~T0 @X0 -> 4 `i a ]
-[e = _cmd F12229 ]
+[e = _cmd F12231 ]
 "209
 [; ;L6470.c: 209:      while( (Busy==0) && (PORTBbits.RB1==0) ) ;
 [e $U 1570  ]
@@ -1919,4 +1919,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "213
 [; ;L6470.c: 213: }
 [e :UE 1569 ]
+}
+"215
+[; ;L6470.c: 215: void L6470_CMD(int command){
+[v _L6470_CMD `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _L6470_CMD ]
+[v _command `i ~T0 @X0 1 r1 ]
+[f ]
+"216
+[; ;L6470.c: 216:     while( (Busy==0) && (PORTBbits.RB1==0) ) ;
+[e $U 1574  ]
+[e :U 1575 ]
+[e :U 1574 ]
+[e $ && == _Busy -> 0 `i == -> . . _PORTBbits 0 1 `i -> 0 `i 1575  ]
+[e :U 1576 ]
+"217
+[; ;L6470.c: 217:      PORTBbits.RB0 = 0 ;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"218
+[; ;L6470.c: 218:      SPI_transfer(command) ;
+[e ( _SPI_transfer (1 -> _command `uc ]
+"219
+[; ;L6470.c: 219:      PORTBbits.RB0 = 1 ;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
+"220
+[; ;L6470.c: 220: }
+[e :UE 1573 ]
 }

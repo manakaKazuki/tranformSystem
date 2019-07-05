@@ -20036,6 +20036,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
 # 51 "mcc_generated_files/ecan.c" 2
 
+
 # 1 "mcc_generated_files/ecan.h" 1
 # 54 "mcc_generated_files/ecan.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdbool.h" 1 3
@@ -20143,23 +20144,23 @@ typedef union {
     } frame;
     uint8_t array[14];
 } uCAN_MSG;
-# 118 "mcc_generated_files/ecan.h"
+# 120 "mcc_generated_files/ecan.h"
 void ECAN_Initialize(void);
-# 140 "mcc_generated_files/ecan.h"
+# 142 "mcc_generated_files/ecan.h"
 void CAN_sleep(void);
-# 161 "mcc_generated_files/ecan.h"
+# 163 "mcc_generated_files/ecan.h"
 uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
-# 185 "mcc_generated_files/ecan.h"
+# 187 "mcc_generated_files/ecan.h"
 uint8_t CAN_receive(uCAN_MSG *tempCanMsg);
-# 207 "mcc_generated_files/ecan.h"
+# 209 "mcc_generated_files/ecan.h"
 uint8_t CAN_messagesInBuffer(void);
-# 231 "mcc_generated_files/ecan.h"
+# 233 "mcc_generated_files/ecan.h"
 uint8_t CAN_isBusOff(void);
-# 255 "mcc_generated_files/ecan.h"
+# 257 "mcc_generated_files/ecan.h"
 uint8_t CAN_isRXErrorPassive(void);
-# 279 "mcc_generated_files/ecan.h"
+# 281 "mcc_generated_files/ecan.h"
 uint8_t CAN_isTXErrorPassive(void);
-# 52 "mcc_generated_files/ecan.c" 2
+# 53 "mcc_generated_files/ecan.c" 2
 
 
 
@@ -20183,7 +20184,12 @@ void ECAN_Initialize(void)
 
 
     CIOCON = 0x20;
-# 88 "mcc_generated_files/ecan.c"
+# 86 "mcc_generated_files/ecan.c"
+    RXB0CONbits.RXM0 = 1;
+    RXB0CONbits.RXM1 = 1;
+
+
+
     RXM0EIDH = 0xFF;
     RXM0EIDL = 0xFF;
     RXM0SIDH = 0xFF;
@@ -20220,7 +20226,7 @@ void ECAN_Initialize(void)
     RXF5EIDL = 0x00;
     RXF5SIDH = 0x00;
     RXF5SIDL = 0x00;
-# 138 "mcc_generated_files/ecan.c"
+# 141 "mcc_generated_files/ecan.c"
     BRGCON1 = 0x01;
     BRGCON2 = 0x98;
     BRGCON3 = 0x01;

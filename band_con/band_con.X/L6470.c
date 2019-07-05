@@ -212,3 +212,9 @@ void L6470_Stop(int mode)
      L6470_CS = 1 ;
 }
 
+void L6470_CMD(int command){
+    while( (Busy==0) && (L6470_BUSY==0) ) ; // コマンド実行中なら待つ
+     L6470_CS = 0 ;
+     SPI_transfer(command) ;               // ストップコマンドの送信
+     L6470_CS = 1 ;
+}

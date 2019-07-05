@@ -38,6 +38,12 @@
 #define L6470_CONFIG	0x18	// コンフィグの設定(16bit)
 #define L6470_STATUS	0x19	// 現在のステータス(16bit)
 
+//コマンドアドレス
+#define L6470_GO_HOME 0x70      //GO HOME
+#define L6470_GO_MARK 0x78      //GO MARK
+#define L6470_RESET_POS 0xD8    // set HOME position
+#define L6470_RESET_DEVICE 0xC0 // Reset device
+
 // 定数の定義
 #define Forward         1       // モータは正転で回転
 #define Reverse         0       // モータは逆転で回転
@@ -88,5 +94,6 @@ int  L6470_ALARM() ;
 void L6470_Run(char dir,unsigned long speed) ;
 void L6470_Move(char dir,unsigned long step) ;
 void L6470_Stop(int mode) ;
+void L6470_CMD(int command);
 
 #endif

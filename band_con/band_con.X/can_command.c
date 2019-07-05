@@ -5,10 +5,14 @@
 #include "L6470_SPI.h"
 #include "servo.h"
 
+/*
 union {
     unsigned char c[8] ;
     unsigned int  i;
 } data ;
+*/
+
+unsigned char data[8];
 
 unsigned long L6470_change(unsigned char *dt, int num){
     int i;
@@ -21,14 +25,28 @@ unsigned long L6470_change(unsigned char *dt, int num){
 }
 
 void L6470_command(void){
-    switch(data.c[1]){
+    switch(data[2]){
         case 0x00:
-            L6470_Stop(data.c[2]);
-        case 0x50:
-            L6470_Run(data.c[2],L6470_change(&data.c[3],3));
+            L6470_Stop(data[7]);
             break;
-        case 0x40:
-            L6470_Move(data.c[2],L6470_change(&data.c[3],3));
+        case 0x01:
+            L6470_Run(data[3],L6470_change(&data[4],3));
+            break;
+        case 0x02:
+            L6470_Move(data[3],L6470_change(&data[4],3));
+            break;
+        case 0x03:
+            L6470_CMD(L6470_GO_HOME);
+            break;
+        case 0x04:
+            L6470_CMD(L6470_RESET_DEVICE);
+            break;
+        case 0x05:
+            while(STOP_SW){
+                L6470_Run(Reverse,30000);
+            }
+            L6470_Stop(HARDSTOP);
+            L6470_CMD(L6470_RESET_POS);
             break;
         default:
             break;
@@ -36,34 +54,29 @@ void L6470_command(void){
     }                   
 }
 
-void can_recieve(uCAN_MSG rxMessage){
-     unsigned char buf[12] ;
+unsigned char can_recieve(uCAN_MSG rxMessage){
+     //unsigned char buf[12] ;
 
      // ïWèÄÇÃéØï éqIDÇ©ÅH
      if (rxMessage.frame.idType == dSTANDARD_CAN_MSG_ID_2_0B) {
-          switch (rxMessage.frame.id) {
-            case CAN_ID :
-                data.c[0] = rxMessage.frame.data0 ;
-                data.c[1] = rxMessage.frame.data1 ;
-                data.c[2] = rxMessage.frame.data2 ;
-                data.c[3] = rxMessage.frame.data3 ;
-                data.c[4] = rxMessage.frame.data4 ;
-                data.c[5] = rxMessage.frame.data5 ;
-                data.c[6] = rxMessage.frame.data6 ;
-                data.c[7] = rxMessage.frame.data7 ;
-                switch(data.c[0]){
-                    case 0x01:
-                        ServoOut(data.c[1]);
-                        break;
-                    case 0x10:                        
-                        L6470_command();                        
-                    default:
-                        break;
-                }
-                break ;
-            default :
-                break ;
-          }
+        // switch(rxMessage.frame.id){
+            //case CAN_ID:
+         if(rxMessage.frame.id == CAN_ID){
+                data[0] = rxMessage.frame.data0 ;
+                data[1] = rxMessage.frame.data1 ;
+                data[2] = rxMessage.frame.data2 ;
+                data[3] = rxMessage.frame.data3 ;
+                data[4] = rxMessage.frame.data4 ;
+                data[5] = rxMessage.frame.data5 ;
+                data[6] = rxMessage.frame.data6 ;
+                data[7] = rxMessage.frame.data7 ;
+                ServoOut(data[1]);
+                L6470_command();}
+            //    break;
+            // default:
+            //     break;
+         //}
      }
+     return data;
 }
 

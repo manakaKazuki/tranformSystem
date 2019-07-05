@@ -49,6 +49,7 @@
 */
 
 #include <xc.h>
+#include <pic18f26k80.h>
 #include "ecan.h"
 
 /**
@@ -81,7 +82,9 @@ void ECAN_Initialize(void)
     0x123		SID		Acceptance Mask 0		Filter 0	RXB0
     ........................................................
     */
- 
+
+    RXB0CONbits.RXM0 = 1;
+    RXB0CONbits.RXM1 = 1;
 /**    
     Initialize Receive Masks
 */   
@@ -99,7 +102,7 @@ void ECAN_Initialize(void)
     */   
     RXF0EIDH = 0x00;
     RXF0EIDL = 0x00;
-    RXF0SIDH = 0x24;
+    RXF0SIDH = 0x24;//CANID
     RXF0SIDL = 0x60;
     RXF1EIDH = 0x00;
     RXF1EIDL = 0x00;

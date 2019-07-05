@@ -1,17 +1,31 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"8 can_command.c
-[; ;can_command.c: 8: union {
-[u S1532 `uc -> 8 `i `ui 1 ]
-[n S1532 . c i ]
-"90 ./L6470.h
-[; ;./L6470.h: 90: void L6470_Stop(int mode) ;
+"96 ./L6470.h
+[; ;./L6470.h: 96: void L6470_Stop(int mode) ;
 [v _L6470_Stop `(v ~T0 @X0 0 ef1`i ]
-"88
-[; ;./L6470.h: 88: void L6470_Run(char dir,unsigned long speed) ;
+"94
+[; ;./L6470.h: 94: void L6470_Run(char dir,unsigned long speed) ;
 [v _L6470_Run `(v ~T0 @X0 0 ef2`uc`ul ]
-"89
-[; ;./L6470.h: 89: void L6470_Move(char dir,unsigned long step) ;
+"95
+[; ;./L6470.h: 95: void L6470_Move(char dir,unsigned long step) ;
 [v _L6470_Move `(v ~T0 @X0 0 ef2`uc`ul ]
+"97
+[; ;./L6470.h: 97: void L6470_CMD(int command);
+[v _L6470_CMD `(v ~T0 @X0 0 ef1`i ]
+"29944 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 29944:     struct {
+[s S1139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1139 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"29954
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 29954:     struct {
+[s S1140 :3 `uc 1 :1 `uc 1 ]
+[n S1140 . . CCP2_PA2 ]
+"29943
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 29943: typedef union {
+[u S1138 `S1139 1 `S1140 1 ]
+[n S1138 . . . ]
+"29959
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 29959: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS1138 ~T0 @X0 0 e@3969 ]
 "70 ./mcc_generated_files/ecan.h
 [; ;./mcc_generated_files/ecan.h: 70:     struct {
 [s S1527 `uc 1 `ul 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
@@ -1397,208 +1411,215 @@ Version 4.0 HI-TECH Software Intermediate Code
 "37211
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18f26k80.h: 37211: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"11 can_command.c
-[; ;can_command.c: 11: } data ;
-[v _data `S1532 ~T0 @X0 1 e ]
-"13
-[; ;can_command.c: 13: unsigned long L6470_change(unsigned char *dt, int num){
+"15 can_command.c
+[; ;can_command.c: 15: unsigned char data[8];
+[v _data `uc ~T0 @X0 -> 8 `i e ]
+"17
+[; ;can_command.c: 17: unsigned long L6470_change(unsigned char *dt, int num){
 [v _L6470_change `(ul ~T0 @X0 1 ef2`*uc`i ]
 {
 [e :U _L6470_change ]
 [v _dt `*uc ~T0 @X0 1 r1 ]
 [v _num `i ~T0 @X0 1 r2 ]
 [f ]
-"14
-[; ;can_command.c: 14:     int i;
+"18
+[; ;can_command.c: 18:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"15
-[; ;can_command.c: 15:     unsigned long val = 0;
+"19
+[; ;can_command.c: 19:     unsigned long val = 0;
 [v _val `ul ~T0 @X0 1 a ]
 [e = _val -> -> -> 0 `i `l `ul ]
-"16
-[; ;can_command.c: 16:     for(i=0; i<num; i++){
+"20
+[; ;can_command.c: 20:     for(i=0; i<num; i++){
 {
 [e = _i -> 0 `i ]
-[e $U 1537  ]
-[e :U 1534 ]
+[e $U 1536  ]
+[e :U 1533 ]
 {
-"17
-[; ;can_command.c: 17:         val = (val << 8) + *dt;
+"21
+[; ;can_command.c: 21:         val = (val << 8) + *dt;
 [e = _val + << _val -> 8 `i -> *U _dt `ul ]
-"18
-[; ;can_command.c: 18:         ++dt;
+"22
+[; ;can_command.c: 22:         ++dt;
 [e =+ _dt * -> -> 1 `i `x -> -> # *U _dt `i `x ]
-"19
-[; ;can_command.c: 19:     }
+"23
+[; ;can_command.c: 23:     }
 }
 [e ++ _i -> 1 `i ]
-[e :U 1537 ]
-[e $ < _i _num 1534  ]
-[e :U 1535 ]
+[e :U 1536 ]
+[e $ < _i _num 1533  ]
+[e :U 1534 ]
 }
-"20
-[; ;can_command.c: 20:     return val;
+"24
+[; ;can_command.c: 24:     return val;
 [e ) _val ]
-[e $UE 1533  ]
-"21
-[; ;can_command.c: 21: }
-[e :UE 1533 ]
+[e $UE 1532  ]
+"25
+[; ;can_command.c: 25: }
+[e :UE 1532 ]
 }
-"23
-[; ;can_command.c: 23: void L6470_command(void){
+"27
+[; ;can_command.c: 27: void L6470_command(void){
 [v _L6470_command `(v ~T0 @X0 1 ef ]
 {
 [e :U _L6470_command ]
 [f ]
-"24
-[; ;can_command.c: 24:     switch(data.c[1]){
-[e $U 1540  ]
-{
-"25
-[; ;can_command.c: 25:         case 0x00:
-[e :U 1541 ]
-"26
-[; ;can_command.c: 26:             L6470_Stop(data.c[2]);
-[e ( _L6470_Stop (1 -> *U + &U . _data 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `i ]
-"27
-[; ;can_command.c: 27:         case 0x50:
-[e :U 1542 ]
 "28
-[; ;can_command.c: 28:             L6470_Run(data.c[2],L6470_change(&data.c[3],3));
-[e ( _L6470_Run (2 , -> *U + &U . _data 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `uc ( _L6470_change (2 , &U *U + &U . _data 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux -> 3 `i ]
+[; ;can_command.c: 28:     switch(data[2]){
+[e $U 1539  ]
+{
 "29
-[; ;can_command.c: 29:             break;
-[e $U 1539  ]
+[; ;can_command.c: 29:         case 0x00:
+[e :U 1540 ]
 "30
-[; ;can_command.c: 30:         case 0x40:
-[e :U 1543 ]
+[; ;can_command.c: 30:             L6470_Stop(data[7]);
+[e ( _L6470_Stop (1 -> *U + &U _data * -> -> -> 7 `i `ui `ux -> -> # *U &U _data `ui `ux `i ]
 "31
-[; ;can_command.c: 31:             L6470_Move(data.c[2],L6470_change(&data.c[3],3));
-[e ( _L6470_Move (2 , -> *U + &U . _data 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `uc ( _L6470_change (2 , &U *U + &U . _data 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux -> 3 `i ]
+[; ;can_command.c: 31:             break;
+[e $U 1538  ]
 "32
-[; ;can_command.c: 32:             break;
-[e $U 1539  ]
+[; ;can_command.c: 32:         case 0x01:
+[e :U 1541 ]
 "33
-[; ;can_command.c: 33:         default:
-[e :U 1544 ]
+[; ;can_command.c: 33:             L6470_Run(data[3],L6470_change(&data[4],3));
+[e ( _L6470_Run (2 , -> *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux `uc ( _L6470_change (2 , &U *U + &U _data * -> -> -> 4 `i `ui `ux -> -> # *U &U _data `ui `ux -> 3 `i ]
 "34
 [; ;can_command.c: 34:             break;
-[e $U 1539  ]
+[e $U 1538  ]
+"35
+[; ;can_command.c: 35:         case 0x02:
+[e :U 1542 ]
 "36
-[; ;can_command.c: 36:     }
-}
-[e $U 1539  ]
-[e :U 1540 ]
-[e [\ -> *U + &U . _data 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `i , $ -> 0 `i 1541
- , $ -> 80 `i 1542
- , $ -> 64 `i 1543
- 1544 ]
-[e :U 1539 ]
+[; ;can_command.c: 36:             L6470_Move(data[3],L6470_change(&data[4],3));
+[e ( _L6470_Move (2 , -> *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux `uc ( _L6470_change (2 , &U *U + &U _data * -> -> -> 4 `i `ui `ux -> -> # *U &U _data `ui `ux -> 3 `i ]
 "37
-[; ;can_command.c: 37: }
-[e :UE 1538 ]
-}
+[; ;can_command.c: 37:             break;
+[e $U 1538  ]
+"38
+[; ;can_command.c: 38:         case 0x03:
+[e :U 1543 ]
 "39
-[; ;can_command.c: 39: void can_recieve(uCAN_MSG rxMessage){
-[v _can_recieve `(v ~T0 @X0 1 ef1`S1526 ]
+[; ;can_command.c: 39:             L6470_CMD(0x70);
+[e ( _L6470_CMD (1 -> 112 `i ]
+"40
+[; ;can_command.c: 40:             break;
+[e $U 1538  ]
+"41
+[; ;can_command.c: 41:         case 0x04:
+[e :U 1544 ]
+"42
+[; ;can_command.c: 42:             L6470_CMD(0xC0);
+[e ( _L6470_CMD (1 -> 192 `i ]
+"43
+[; ;can_command.c: 43:             break;
+[e $U 1538  ]
+"44
+[; ;can_command.c: 44:         case 0x05:
+[e :U 1545 ]
+"45
+[; ;can_command.c: 45:             while(PORTBbits.RB5){
+[e $U 1546  ]
+[e :U 1547 ]
+{
+"46
+[; ;can_command.c: 46:                 L6470_Run(0,30000);
+[e ( _L6470_Run (2 , -> -> 0 `i `uc -> -> -> 30000 `i `l `ul ]
+"47
+[; ;can_command.c: 47:             }
+}
+[e :U 1546 ]
+"45
+[; ;can_command.c: 45:             while(PORTBbits.RB5){
+[e $ != -> . . _PORTBbits 0 5 `i -> 0 `i 1547  ]
+[e :U 1548 ]
+"48
+[; ;can_command.c: 48:             L6470_Stop(1);
+[e ( _L6470_Stop (1 -> 1 `i ]
+"49
+[; ;can_command.c: 49:             L6470_CMD(0xD8);
+[e ( _L6470_CMD (1 -> 216 `i ]
+"50
+[; ;can_command.c: 50:             break;
+[e $U 1538  ]
+"51
+[; ;can_command.c: 51:         default:
+[e :U 1549 ]
+"52
+[; ;can_command.c: 52:             break;
+[e $U 1538  ]
+"54
+[; ;can_command.c: 54:     }
+}
+[e $U 1538  ]
+[e :U 1539 ]
+[e [\ -> *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux `i , $ -> 0 `i 1540
+ , $ -> 1 `i 1541
+ , $ -> 2 `i 1542
+ , $ -> 3 `i 1543
+ , $ -> 4 `i 1544
+ , $ -> 5 `i 1545
+ 1549 ]
+[e :U 1538 ]
+"55
+[; ;can_command.c: 55: }
+[e :UE 1537 ]
+}
+"57
+[; ;can_command.c: 57: unsigned char can_recieve(uCAN_MSG rxMessage){
+[v _can_recieve `(uc ~T0 @X0 1 ef1`S1526 ]
 {
 [e :U _can_recieve ]
 [v _rxMessage `S1526 ~T0 @X0 1 r1 ]
 [f ]
-"40
-[; ;can_command.c: 40:      unsigned char buf[12] ;
-[v _buf `uc ~T0 @X0 -> 12 `i a ]
-"43
-[; ;can_command.c: 43:      if (rxMessage.frame.idType == 1) {
-[e $ ! == -> . . _rxMessage 0 0 `i -> 1 `i 1546  ]
-{
-"44
-[; ;can_command.c: 44:           switch (rxMessage.frame.id) {
-[e $U 1548  ]
-{
-"45
-[; ;can_command.c: 45:             case 0x123 :
-[e :U 1549 ]
-"46
-[; ;can_command.c: 46:                 data.c[0] = rxMessage.frame.data0 ;
-[e = *U + &U . _data 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 3 ]
-"47
-[; ;can_command.c: 47:                 data.c[1] = rxMessage.frame.data1 ;
-[e = *U + &U . _data 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 4 ]
-"48
-[; ;can_command.c: 48:                 data.c[2] = rxMessage.frame.data2 ;
-[e = *U + &U . _data 0 * -> -> -> 2 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 5 ]
-"49
-[; ;can_command.c: 49:                 data.c[3] = rxMessage.frame.data3 ;
-[e = *U + &U . _data 0 * -> -> -> 3 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 6 ]
-"50
-[; ;can_command.c: 50:                 data.c[4] = rxMessage.frame.data4 ;
-[e = *U + &U . _data 0 * -> -> -> 4 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 7 ]
-"51
-[; ;can_command.c: 51:                 data.c[5] = rxMessage.frame.data5 ;
-[e = *U + &U . _data 0 * -> -> -> 5 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 8 ]
-"52
-[; ;can_command.c: 52:                 data.c[6] = rxMessage.frame.data6 ;
-[e = *U + &U . _data 0 * -> -> -> 6 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 9 ]
-"53
-[; ;can_command.c: 53:                 data.c[7] = rxMessage.frame.data7 ;
-[e = *U + &U . _data 0 * -> -> -> 7 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux . . _rxMessage 0 10 ]
-"54
-[; ;can_command.c: 54:                 switch(data.c[0]){
-[e $U 1551  ]
-{
-"55
-[; ;can_command.c: 55:                     case 0x01:
-[e :U 1552 ]
-"56
-[; ;can_command.c: 56:                         ServoOut(data.c[1]);
-[e ( _ServoOut (1 -> *U + &U . _data 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `i ]
-"57
-[; ;can_command.c: 57:                         break;
-[e $U 1550  ]
-"58
-[; ;can_command.c: 58:                     case 0x10:
-[e :U 1553 ]
-"59
-[; ;can_command.c: 59:                         L6470_command();
-[e ( _L6470_command ..  ]
-"60
-[; ;can_command.c: 60:                     default:
-[e :U 1554 ]
 "61
-[; ;can_command.c: 61:                         break;
-[e $U 1550  ]
-"62
-[; ;can_command.c: 62:                 }
-}
-[e $U 1550  ]
-[e :U 1551 ]
-[e [\ -> *U + &U . _data 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . _data 0 `ui `ux `i , $ -> 1 `i 1552
- , $ -> 16 `i 1553
- 1554 ]
-[e :U 1550 ]
-"63
-[; ;can_command.c: 63:                 break ;
-[e $U 1547  ]
+[; ;can_command.c: 61:      if (rxMessage.frame.idType == 1) {
+[e $ ! == -> . . _rxMessage 0 0 `i -> 1 `i 1551  ]
+{
 "64
-[; ;can_command.c: 64:             default :
-[e :U 1555 ]
+[; ;can_command.c: 64:          if(rxMessage.frame.id == 0x102){
+[e $ ! == . . _rxMessage 0 1 -> -> -> 258 `i `l `ul 1552  ]
+{
 "65
-[; ;can_command.c: 65:                 break ;
-[e $U 1547  ]
+[; ;can_command.c: 65:                 data[0] = rxMessage.frame.data0 ;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 3 ]
 "66
-[; ;can_command.c: 66:           }
-}
-[e $U 1547  ]
-[e :U 1548 ]
-[e [\ . . _rxMessage 0 1 , $ -> -> -> 291 `i `l `ul 1549
- 1555 ]
-[e :U 1547 ]
+[; ;can_command.c: 66:                 data[1] = rxMessage.frame.data1 ;
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 4 ]
 "67
-[; ;can_command.c: 67:      }
-}
-[e :U 1546 ]
+[; ;can_command.c: 67:                 data[2] = rxMessage.frame.data2 ;
+[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 5 ]
 "68
-[; ;can_command.c: 68: }
-[e :UE 1545 ]
+[; ;can_command.c: 68:                 data[3] = rxMessage.frame.data3 ;
+[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 6 ]
+"69
+[; ;can_command.c: 69:                 data[4] = rxMessage.frame.data4 ;
+[e = *U + &U _data * -> -> -> 4 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 7 ]
+"70
+[; ;can_command.c: 70:                 data[5] = rxMessage.frame.data5 ;
+[e = *U + &U _data * -> -> -> 5 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 8 ]
+"71
+[; ;can_command.c: 71:                 data[6] = rxMessage.frame.data6 ;
+[e = *U + &U _data * -> -> -> 6 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 9 ]
+"72
+[; ;can_command.c: 72:                 data[7] = rxMessage.frame.data7 ;
+[e = *U + &U _data * -> -> -> 7 `i `ui `ux -> -> # *U &U _data `ui `ux . . _rxMessage 0 10 ]
+"73
+[; ;can_command.c: 73:                 ServoOut(data[1]);
+[e ( _ServoOut (1 -> *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux `i ]
+"74
+[; ;can_command.c: 74:                 L6470_command();}
+[e ( _L6470_command ..  ]
+}
+[e :U 1552 ]
+"79
+[; ;can_command.c: 79:      }
+}
+[e :U 1551 ]
+"80
+[; ;can_command.c: 80:      return data;
+[e ) -> &U _data `uc ]
+[e $UE 1550  ]
+"81
+[; ;can_command.c: 81: }
+[e :UE 1550 ]
 }

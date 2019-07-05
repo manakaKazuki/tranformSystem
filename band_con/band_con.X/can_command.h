@@ -16,10 +16,10 @@
  #define _XTAL_FREQ 16000000       // g—p‚·‚éPIC“™‚É‚æ‚è“®ìü”g”’l‚ğİ’è‚·‚é
 #endif
 
-#define CAN_ID 0x123
+#define STOP_SW PORTBbits.RB5
+#define CAN_ID 0x102
 
-
-void can_recieve(uCAN_MSG rxMessage);
+unsigned char can_recieve(uCAN_MSG rxMessage);
 
 #endif	/* CAN_COMMAND_H */
 

@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 14 "main.c"
+# 15 "main.c"
 #pragma config RETEN = OFF
 #pragma config INTOSCSEL = HIGH
 #pragma config SOSCSEL = DIG
@@ -20098,7 +20098,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\xc.h" 2 3
-# 77 "main.c" 2
+# 78 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\stdio.h" 3
@@ -20236,7 +20236,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 78 "main.c" 2
+# 79 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\string.h" 1 3
@@ -20294,7 +20294,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 80 "main.c" 2
+# 81 "main.c" 2
 
 # 1 "./mcc_generated_files/ecan.h" 1
 # 54 "./mcc_generated_files/ecan.h"
@@ -20403,23 +20403,23 @@ typedef union {
     } frame;
     uint8_t array[14];
 } uCAN_MSG;
-# 118 "./mcc_generated_files/ecan.h"
+# 120 "./mcc_generated_files/ecan.h"
 void ECAN_Initialize(void);
-# 140 "./mcc_generated_files/ecan.h"
+# 142 "./mcc_generated_files/ecan.h"
 void CAN_sleep(void);
-# 161 "./mcc_generated_files/ecan.h"
+# 163 "./mcc_generated_files/ecan.h"
 uint8_t CAN_transmit(uCAN_MSG *tempCanMsg);
-# 185 "./mcc_generated_files/ecan.h"
+# 187 "./mcc_generated_files/ecan.h"
 uint8_t CAN_receive(uCAN_MSG *tempCanMsg);
-# 207 "./mcc_generated_files/ecan.h"
+# 209 "./mcc_generated_files/ecan.h"
 uint8_t CAN_messagesInBuffer(void);
-# 231 "./mcc_generated_files/ecan.h"
+# 233 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isBusOff(void);
-# 255 "./mcc_generated_files/ecan.h"
+# 257 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isRXErrorPassive(void);
-# 279 "./mcc_generated_files/ecan.h"
+# 281 "./mcc_generated_files/ecan.h"
 uint8_t CAN_isTXErrorPassive(void);
-# 81 "main.c" 2
+# 82 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\math.h" 1 3
 # 15 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.05\\pic\\include\\c99\\math.h" 3
@@ -20894,7 +20894,7 @@ double jn(int, double);
 double y0(double);
 double y1(double);
 double yn(int, double);
-# 82 "main.c" 2
+# 83 "main.c" 2
 
 # 1 "./SPIlib.h" 1
 # 66 "./SPIlib.h"
@@ -20902,10 +20902,10 @@ void SPI_Init(char mode,char divider,int sdo) ;
 void SPI_setDataMode(char mode) ;
 void SPI_setClockDivider(char divider,char rate) ;
 unsigned char SPI_transfer(char dt) ;
-# 83 "main.c" 2
+# 84 "main.c" 2
 
 # 1 "./L6470.h" 1
-# 58 "./L6470.h"
+# 64 "./L6470.h"
 union STEP_MODE_t {
      unsigned char DT ;
      struct {
@@ -20939,28 +20939,28 @@ int L6470_ALARM() ;
 void L6470_Run(char dir,unsigned long speed) ;
 void L6470_Move(char dir,unsigned long step) ;
 void L6470_Stop(int mode) ;
-# 84 "main.c" 2
+void L6470_CMD(int command);
+# 85 "main.c" 2
 
 # 1 "./can_command.h" 1
 # 22 "./can_command.h"
-void can_recieve(uCAN_MSG rxMessage);
-# 85 "main.c" 2
+unsigned char can_recieve(uCAN_MSG rxMessage);
+# 86 "main.c" 2
 
 # 1 "./servo.h" 1
 # 19 "./servo.h"
 void ServoOut(int angle);
-# 86 "main.c" 2
-
-
-
-
-
+# 87 "main.c" 2
+# 99 "main.c"
 void Wait(unsigned int num) ;
 
 
+uCAN_MSG txMessage ;
 uCAN_MSG rxMessage ;
+int *data;
 unsigned char servo_Flag = 0;
 int servo_Angle[2] ={60,120};
+int arm_mode_flag = 0;
 
 void main(void) {
 
@@ -20968,11 +20968,11 @@ void main(void) {
 
     OSCCON = 0b01110010;
     INTCON2bits.RBPU = 0;
-    WPUB = 0b00000010;
+    WPUB = 0b00100010;
     ANCON0 = 0b00000000;
     ANCON1 = 0b00000000;
     TRISA = 0b11000000;
-    TRISB = 0b00001010;
+    TRISB = 0b00101010;
     TRISC = 0b00010001;
     PORTA = 0b00000000;
     PORTB = 0b00000001;
@@ -21003,25 +21003,64 @@ void main(void) {
 
     Wait(300) ;
 
+    while(PORTBbits.RB5){
+        L6470_Run(0,30000);
+    }
+    L6470_Stop(1);
+    L6470_CMD(0xD8);
+
+
     PORTCbits.RC2 = 1;
     Wait(100);
     PORTCbits.RC2 = 0;
 
     while(1) {
-        if(PORTCbits.RC0){
-            PORTCbits.RC2 = 0;
-
-
+        if(PORTAbits.RA6 == 0){
+            if(arm_mode_flag == 1){
+                PORTCbits.RC2 = 1;
+                if(servo_Flag == 1){
+                    servo_Flag = 0;
+                }else{
+                    servo_Flag = 1;
+                }
+                ServoOut(servo_Angle[servo_Flag]);
+                arm_mode_flag = 0;
+            }
+            Wait(1);
         }else{
-            PORTCbits.RC2 = 1;
-            ServoOut(servo_Angle[1]);
+            PORTCbits.RC2 = 0;
+            arm_mode_flag = 1;
+            Wait(1);
+        }
 
+        if(PORTAbits.RA7 == 0){
+            L6470_Run(1,30000);
+        }else if(PORTCbits.RC0 == 0){
+            if(PORTBbits.RB5){
+                L6470_Run(0,30000);
+            }else{
+                L6470_Stop(1);
+            }
+        }else{
+            L6470_Stop(1);
         }
 
         if (CAN_receive(&rxMessage)) {
 
-            can_recieve(rxMessage);
             PORTCbits.RC2 = 1;
+            data = can_recieve(rxMessage);
+            txMessage.frame.idType = 1 ;
+            txMessage.frame.id = 0x001 ;
+            txMessage.frame.dlc = 8 ;
+            txMessage.frame.data0 = data[0];
+            txMessage.frame.data1 = data[1];
+            txMessage.frame.data2 = data[2];
+            txMessage.frame.data3 = data[3];
+            txMessage.frame.data4 = data[4];
+            txMessage.frame.data5 = data[5];
+            txMessage.frame.data6 = data[6];
+            txMessage.frame.data7 = data[7];
+
             Wait(50);
         }
     }

@@ -90,6 +90,8 @@ typedef union {
 #define dSTANDARD_CAN_MSG_ID_2_0B 1
 #define dEXTENDED_CAN_MSG_ID_2_0B 2
 
+
+
 /**
   Section: CAN APIs
 */

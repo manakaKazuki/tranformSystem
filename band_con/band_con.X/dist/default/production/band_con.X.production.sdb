@@ -29,13 +29,13 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"13 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\can_command.c
+"17 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _L6470_change L6470_change `(ul  1 e 4 0 ]
-"23
+"27
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
-"39
-[v _can_recieve can_recieve `(v  1 e 1 0 ]
-"27 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\L6470.c
+"57
+[v _can_recieve can_recieve `(uc  1 e 1 0 ]
+"27 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _CMD_Send CMD_Send `(v  1 e 1 0 ]
 "62
 [v _L6470_Init L6470_Init `(ul  1 e 4 0 ]
@@ -47,7 +47,9 @@
 [v _L6470_Move L6470_Move `(v  1 e 1 0 ]
 "205
 [v _L6470_Stop L6470_Stop `(v  1 e 1 0 ]
-"145 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\L6470_SPI.c
+"215
+[v _L6470_CMD L6470_CMD `(v  1 e 1 0 ]
+"145 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470_SPI.c
 [v _L6470_transfer L6470_transfer `(v  1 e 1 0 ]
 "163
 [v _L6470_send L6470_send `(v  1 e 1 0 ]
@@ -59,25 +61,25 @@
 [v _L6470_getparam L6470_getparam `(l  1 e 4 0 ]
 "202
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
-"98 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\main.c
+"109 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"165
+"215
 [v _Wait Wait `(v  1 e 1 0 ]
-"61 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\mcc_generated_files/ecan.c
+"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
-"238
+"241
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
-"363
+"366
 [v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 s 4 convertReg2ExtendedCANid ]
-"384
+"387
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 s 4 convertReg2StandardCANid ]
-"397
+"400
 [v _convertCANid2Reg convertCANid2Reg `(v  1 s 1 convertCANid2Reg ]
-"7 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\servo.c
+"7 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
 [v _InterTimer InterTimer `IIH(v  1 e 1 0 ]
 "24
 [v _ServoOut ServoOut `(v  1 e 1 0 ]
-"36 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\SPIlib.c
+"36 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 "119
 [v _SPI_transfer SPI_transfer `(uc  1 e 1 0 ]
@@ -151,7 +153,7 @@
 [v _RXM1EIDH RXM1EIDH `VEuc  1 e 1 @3838 ]
 "19895
 [v _RXM1EIDL RXM1EIDL `VEuc  1 e 1 @3839 ]
-[s S142 . 1 `uc 1 TXPRI 1 0 :2:0 
+[s S223 . 1 `uc 1 TXPRI 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXREQ 1 0 :1:3 
 `uc 1 TXERR 1 0 :1:4 
@@ -160,10 +162,10 @@
 `uc 1 TXBIF 1 0 :1:7 
 ]
 "20045
-[s S150 . 1 `uc 1 TXPRI0 1 0 :1:0 
+[s S231 . 1 `uc 1 TXPRI0 1 0 :1:0 
 `uc 1 TXPRI1 1 0 :1:1 
 ]
-[s S279 . 1 `uc 1 TXB2PRI0 1 0 :1:0 
+[s S360 . 1 `uc 1 TXB2PRI0 1 0 :1:0 
 `uc 1 TXB2PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB2REQ 1 0 :1:3 
@@ -172,8 +174,8 @@
 `uc 1 TXB2ABT 1 0 :1:6 
 `uc 1 TX2IF 1 0 :1:7 
 ]
-[u S288 . 1 `S142 1 . 1 0 `S150 1 . 1 0 `S279 1 . 1 0 ]
-[v _TXB2CONbits TXB2CONbits `VES288  1 e 1 @3840 ]
+[u S369 . 1 `S223 1 . 1 0 `S231 1 . 1 0 `S360 1 . 1 0 ]
+[v _TXB2CONbits TXB2CONbits `VES369  1 e 1 @3840 ]
 "20125
 [v _TXB2SIDH TXB2SIDH `VEuc  1 e 1 @3841 ]
 "20245
@@ -201,7 +203,7 @@
 "21173
 [v _TXB2D7 TXB2D7 `VEuc  1 e 1 @3853 ]
 "21476
-[s S221 . 1 `uc 1 TXB1PRI0 1 0 :1:0 
+[s S302 . 1 `uc 1 TXB1PRI0 1 0 :1:0 
 `uc 1 TXB1PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB1REQ 1 0 :1:3 
@@ -210,8 +212,8 @@
 `uc 1 TXB1ABT 1 0 :1:6 
 `uc 1 TX1IF 1 0 :1:7 
 ]
-[u S230 . 1 `S142 1 . 1 0 `S150 1 . 1 0 `S221 1 . 1 0 ]
-[v _TXB1CONbits TXB1CONbits `VES230  1 e 1 @3856 ]
+[u S311 . 1 `S223 1 . 1 0 `S231 1 . 1 0 `S302 1 . 1 0 ]
+[v _TXB1CONbits TXB1CONbits `VES311  1 e 1 @3856 ]
 "21556
 [v _TXB1SIDH TXB1SIDH `VEuc  1 e 1 @3857 ]
 "21676
@@ -239,7 +241,7 @@
 "22604
 [v _TXB1D7 TXB1D7 `VEuc  1 e 1 @3869 ]
 "22907
-[s S153 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
+[s S234 . 1 `uc 1 TXB0PRI0 1 0 :1:0 
 `uc 1 TXB0PRI1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 TXB0REQ 1 0 :1:3 
@@ -248,8 +250,8 @@
 `uc 1 TXB0ABT 1 0 :1:6 
 `uc 1 TX0IF 1 0 :1:7 
 ]
-[u S162 . 1 `S142 1 . 1 0 `S150 1 . 1 0 `S153 1 . 1 0 ]
-[v _TXB0CONbits TXB0CONbits `VES162  1 e 1 @3872 ]
+[u S243 . 1 `S223 1 . 1 0 `S231 1 . 1 0 `S234 1 . 1 0 ]
+[v _TXB0CONbits TXB0CONbits `VES243  1 e 1 @3872 ]
 "22987
 [v _TXB0SIDH TXB0SIDH `VEuc  1 e 1 @3873 ]
 "23107
@@ -344,7 +346,7 @@
 [v _ANCON1 ANCON1 `VEuc  1 e 1 @3932 ]
 "26974
 [v _ANCON0 ANCON0 `VEuc  1 e 1 @3933 ]
-[s S326 . 1 `uc 1 FILHIT0 1 0 :1:0 
+[s S28 . 1 `uc 1 FILHIT0 1 0 :1:0 
 `uc 1 JTOFF_FILHIT1 1 0 :1:1 
 `uc 1 RB0DBEN_FILHIT2 1 0 :1:2 
 `uc 1 RXRTRRO_FILHIT3 1 0 :1:3 
@@ -354,21 +356,21 @@
 `uc 1 RXFUL 1 0 :1:7 
 ]
 "27631
-[s S335 . 1 `uc 1 . 1 0 :1:0 
+[s S37 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 JTOFF 1 0 :1:1 
 `uc 1 RB0DBEN 1 0 :1:2 
 `uc 1 RXRTRRO 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RTRRO 1 0 :1:5 
 ]
-[s S342 . 1 `uc 1 . 1 0 :1:0 
+[s S44 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 FILHIT1 1 0 :1:1 
 `uc 1 FILHIT2 1 0 :1:2 
 `uc 1 FILHIT3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXM0 1 0 :1:5 
 ]
-[s S349 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
+[s S51 . 1 `uc 1 RXB0FILHIT0 1 0 :1:0 
 `uc 1 RXB0FILHIT1 1 0 :1:1 
 `uc 1 RXB0FILHIT2 1 0 :1:2 
 `uc 1 RXB0FILHIT3 1 0 :1:3 
@@ -377,13 +379,13 @@
 `uc 1 RXB0M1 1 0 :1:6 
 `uc 1 RXB0FUL 1 0 :1:7 
 ]
-[s S358 . 1 `uc 1 . 1 0 :3:0 
+[s S60 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 RXB0RTRR0 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 RXB0RTRRO 1 0 :1:5 
 ]
-[u S363 . 1 `S326 1 . 1 0 `S335 1 . 1 0 `S342 1 . 1 0 `S349 1 . 1 0 `S358 1 . 1 0 ]
-[v _RXB0CONbits RXB0CONbits `VES363  1 e 1 @3936 ]
+[u S65 . 1 `S28 1 . 1 0 `S37 1 . 1 0 `S44 1 . 1 0 `S51 1 . 1 0 `S60 1 . 1 0 ]
+[v _RXB0CONbits RXB0CONbits `VES65  1 e 1 @3936 ]
 "27766
 [v _RXB0SIDH RXB0SIDH `VEuc  1 e 1 @3937 ]
 "27886
@@ -440,7 +442,7 @@
 [v _COMSTATbits COMSTATbits `VES539  1 e 1 @3953 ]
 "29260
 [v _ECANCON ECANCON `VEuc  1 e 1 @3954 ]
-[s S95 . 1 `uc 1 RXB0IE 1 0 :1:0 
+[s S176 . 1 `uc 1 RXB0IE 1 0 :1:0 
 `uc 1 RXB1IE 1 0 :1:1 
 `uc 1 TXB0IE 1 0 :1:2 
 `uc 1 TXB1IE 1 0 :1:3 
@@ -450,14 +452,14 @@
 `uc 1 IRXIE 1 0 :1:7 
 ]
 "29420
-[s S104 . 1 `uc 1 FIFOWMIE 1 0 :1:0 
+[s S185 . 1 `uc 1 FIFOWMIE 1 0 :1:0 
 `uc 1 RXBnIE 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBnIE 1 0 :1:4 
 ]
-[u S109 . 1 `S95 1 . 1 0 `S104 1 . 1 0 ]
-[v _PIE5bits PIE5bits `VES109  1 e 1 @3958 ]
-[s S63 . 1 `uc 1 RXB0IF 1 0 :1:0 
+[u S190 . 1 `S176 1 . 1 0 `S185 1 . 1 0 ]
+[v _PIE5bits PIE5bits `VES190  1 e 1 @3958 ]
+[s S144 . 1 `uc 1 RXB0IF 1 0 :1:0 
 `uc 1 RXB1IF 1 0 :1:1 
 `uc 1 TXB0IF 1 0 :1:2 
 `uc 1 TXB1IF 1 0 :1:3 
@@ -467,18 +469,36 @@
 `uc 1 IRXIF 1 0 :1:7 
 ]
 "29503
-[s S72 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
+[s S153 . 1 `uc 1 FIFOWMIF 1 0 :1:0 
 `uc 1 RXBnIF 1 0 :1:1 
 `uc 1 . 1 0 :2:2 
 `uc 1 TXBnIF 1 0 :1:4 
 ]
-[u S77 . 1 `S63 1 . 1 0 `S72 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES77  1 e 1 @3959 ]
+[u S158 . 1 `S144 1 . 1 0 `S153 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES158  1 e 1 @3959 ]
 "29859
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+[s S1122 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"29883
+[s S1131 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 LVDIN 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 RJPU 1 0 :1:7 
+]
+[u S1137 . 1 `S1122 1 . 1 0 `S1131 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1137  1 e 1 @3968 ]
 "29938
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
-[s S1170 . 1 `uc 1 RB0 1 0 :1:0 
+[s S1047 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -488,14 +508,14 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "29959
-[s S1179 . 1 `uc 1 . 1 0 :3:0 
+[s S1056 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CCP2_PA2 1 0 :1:3 
 ]
-[u S1182 . 1 `S1170 1 . 1 0 `S1179 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES1182  1 e 1 @3969 ]
+[u S1059 . 1 `S1047 1 . 1 0 `S1056 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1059  1 e 1 @3969 ]
 "30009
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
-[s S1035 . 1 `uc 1 RC0 1 0 :1:0 
+[s S1085 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -505,22 +525,22 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "30035
-[s S1044 . 1 `uc 1 . 1 0 :1:0 
+[s S1094 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S1048 . 1 `uc 1 . 1 0 :1:0 
+[s S1098 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S1051 . 1 `S1035 1 . 1 0 `S1044 1 . 1 0 `S1048 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES1051  1 e 1 @3970 ]
+[u S1101 . 1 `S1085 1 . 1 0 `S1094 1 . 1 0 `S1098 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1101  1 e 1 @3970 ]
 "30645
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "30702
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "30764
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S785 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S791 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 TMR1GIE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -529,13 +549,13 @@
 `uc 1 ADIE 1 0 :1:6 
 ]
 "31092
-[s S793 . 1 `uc 1 . 1 0 :4:0 
+[s S799 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIE 1 0 :1:4 
 `uc 1 RCIE 1 0 :1:5 
 ]
-[u S797 . 1 `S785 1 . 1 0 `S793 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES797  1 e 1 @3997 ]
-[s S757 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S803 . 1 `S791 1 . 1 0 `S799 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES803  1 e 1 @3997 ]
+[s S763 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR1GIF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -544,13 +564,13 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "31163
-[s S765 . 1 `uc 1 . 1 0 :4:0 
+[s S771 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[u S769 . 1 `S757 1 . 1 0 `S765 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES769  1 e 1 @3998 ]
-[s S837 . 1 `uc 1 TMR3GIE 1 0 :1:0 
+[u S775 . 1 `S763 1 . 1 0 `S771 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES775  1 e 1 @3998 ]
+[s S843 . 1 `uc 1 TMR3GIE 1 0 :1:0 
 `uc 1 TMR3IE 1 0 :1:1 
 `uc 1 HLVDIE 1 0 :1:2 
 `uc 1 BCLIE 1 0 :1:3 
@@ -558,12 +578,12 @@
 `uc 1 OSCFIE 1 0 :1:7 
 ]
 "31303
-[s S844 . 1 `uc 1 . 1 0 :2:0 
+[s S850 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIE 1 0 :1:2 
 ]
-[u S847 . 1 `S837 1 . 1 0 `S844 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES847  1 e 1 @4000 ]
-[s S813 . 1 `uc 1 TMR3GIF 1 0 :1:0 
+[u S853 . 1 `S843 1 . 1 0 `S850 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES853  1 e 1 @4000 ]
+[s S819 . 1 `uc 1 TMR3GIF 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 HLVDIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -571,18 +591,18 @@
 `uc 1 OSCFIF 1 0 :1:7 
 ]
 "31357
-[s S820 . 1 `uc 1 . 1 0 :2:0 
+[s S826 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 LVDIF 1 0 :1:2 
 ]
-[u S823 . 1 `S813 1 . 1 0 `S820 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES823  1 e 1 @4001 ]
+[u S829 . 1 `S819 1 . 1 0 `S826 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES829  1 e 1 @4001 ]
 "32986
 [v _T3CON T3CON `VEuc  1 e 1 @4017 ]
-[s S963 . 1 `uc 1 . 1 0 :2:0 
+[s S969 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T3SYNC 1 0 :1:2 
 ]
 "33022
-[s S966 . 1 `uc 1 TMR3ON 1 0 :1:0 
+[s S972 . 1 `uc 1 TMR3ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 nT3SYNC 1 0 :1:2 
 `uc 1 SOSCEN 1 0 :1:3 
@@ -590,27 +610,27 @@
 `uc 1 TMR3CS 1 0 :2:6 
 ]
 "33022
-[s S973 . 1 `uc 1 . 1 0 :4:0 
+[s S979 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T3CKPS0 1 0 :1:4 
 `uc 1 T3CKPS1 1 0 :1:5 
 `uc 1 TMR3CS0 1 0 :1:6 
 `uc 1 TMR3CS1 1 0 :1:7 
 ]
 "33022
-[s S979 . 1 `uc 1 . 1 0 :3:0 
+[s S985 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SOSCEN3 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 RD163 1 0 :1:7 
 ]
 "33022
-[s S984 . 1 `uc 1 . 1 0 :7:0 
+[s S990 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 T3RD16 1 0 :1:7 
 ]
 "33022
-[u S987 . 1 `S963 1 . 1 0 `S966 1 . 1 0 `S973 1 . 1 0 `S979 1 . 1 0 `S984 1 . 1 0 ]
+[u S993 . 1 `S969 1 . 1 0 `S972 1 . 1 0 `S979 1 . 1 0 `S985 1 . 1 0 `S990 1 . 1 0 ]
 "33022
 "33022
-[v _T3CONbits T3CONbits `VES987  1 e 1 @4017 ]
+[v _T3CONbits T3CONbits `VES993  1 e 1 @4017 ]
 "33104
 [v _TMR3L TMR3L `VEuc  1 e 1 @4018 ]
 "33124
@@ -619,15 +639,15 @@
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "34720
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S1384 . 1 `uc 1 . 1 0 :2:0 
+[s S1494 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "34797
-[s S1387 . 1 `uc 1 . 1 0 :5:0 
+[s S1497 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
 "34797
-[s S1390 . 1 `uc 1 BF 1 0 :1:0 
+[s S1500 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -637,73 +657,73 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "34797
-[s S1399 . 1 `uc 1 . 1 0 :2:0 
+[s S1509 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
 "34797
-[s S1404 . 1 `uc 1 . 1 0 :2:0 
+[s S1514 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
 "34797
-[s S1409 . 1 `uc 1 . 1 0 :2:0 
+[s S1519 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
 "34797
-[s S1412 . 1 `uc 1 . 1 0 :5:0 
+[s S1522 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1415 . 1 `uc 1 . 1 0 :2:0 
+[s S1525 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1420 . 1 `uc 1 . 1 0 :2:0 
+[s S1530 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1425 . 1 `uc 1 . 1 0 :2:0 
+[s S1535 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
 "34797
-[s S1431 . 1 `uc 1 . 1 0 :2:0 
+[s S1541 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
 "34797
-[s S1437 . 1 `uc 1 . 1 0 :2:0 
+[s S1547 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
 "34797
-[u S1442 . 1 `S1384 1 . 1 0 `S1387 1 . 1 0 `S1390 1 . 1 0 `S1399 1 . 1 0 `S1404 1 . 1 0 `S1409 1 . 1 0 `S1412 1 . 1 0 `S1415 1 . 1 0 `S1420 1 . 1 0 `S1425 1 . 1 0 `S1431 1 . 1 0 `S1437 1 . 1 0 ]
+[u S1552 . 1 `S1494 1 . 1 0 `S1497 1 . 1 0 `S1500 1 . 1 0 `S1509 1 . 1 0 `S1514 1 . 1 0 `S1519 1 . 1 0 `S1522 1 . 1 0 `S1525 1 . 1 0 `S1530 1 . 1 0 `S1535 1 . 1 0 `S1541 1 . 1 0 `S1547 1 . 1 0 ]
 "34797
 "34797
-[v _SSPSTATbits SSPSTATbits `VES1442  1 e 1 @4039 ]
+[v _SSPSTATbits SSPSTATbits `VES1552  1 e 1 @4039 ]
 "34952
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "35022
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @4041 ]
 "35259
 [v _T1CON T1CON `VEuc  1 e 1 @4045 ]
-[s S915 . 1 `uc 1 . 1 0 :2:0 
+[s S921 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 ]
 "35291
-[s S918 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S924 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 SOSCEN 1 0 :1:3 
@@ -711,34 +731,34 @@
 `uc 1 TMR1CS 1 0 :2:6 
 ]
 "35291
-[s S925 . 1 `uc 1 . 1 0 :4:0 
+[s S931 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 `uc 1 TMR1CS0 1 0 :1:6 
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "35291
-[s S931 . 1 `uc 1 . 1 0 :3:0 
+[s S937 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 T1OSCEN 1 0 :1:3 
 `uc 1 . 1 0 :3:4 
 `uc 1 T1RD16 1 0 :1:7 
 ]
 "35291
-[u S936 . 1 `S915 1 . 1 0 `S918 1 . 1 0 `S925 1 . 1 0 `S931 1 . 1 0 ]
+[u S942 . 1 `S921 1 . 1 0 `S924 1 . 1 0 `S931 1 . 1 0 `S937 1 . 1 0 ]
 "35291
 "35291
-[v _T1CONbits T1CONbits `VES936  1 e 1 @4045 ]
+[v _T1CONbits T1CONbits `VES942  1 e 1 @4045 ]
 "35368
 [v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
 "35388
 [v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
 "35693
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S705 . 1 `uc 1 . 1 0 :7:0 
+[s S711 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "36579
-[s S708 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S714 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 INT3IP 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 INTEDG3 1 0 :1:3 
@@ -748,18 +768,18 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "36579
-[s S717 . 1 `uc 1 . 1 0 :1:0 
+[s S723 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT3P 1 0 :1:1 
 `uc 1 T0IP 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 RBPU 1 0 :1:7 
 ]
 "36579
-[u S723 . 1 `S705 1 . 1 0 `S708 1 . 1 0 `S717 1 . 1 0 ]
+[u S729 . 1 `S711 1 . 1 0 `S714 1 . 1 0 `S723 1 . 1 0 ]
 "36579
 "36579
-[v _INTCON2bits INTCON2bits `VES723  1 e 1 @4081 ]
-[s S861 . 1 `uc 1 RBIF 1 0 :1:0 
+[v _INTCON2bits INTCON2bits `VES729  1 e 1 @4081 ]
+[s S867 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -769,7 +789,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "36681
-[s S870 . 1 `uc 1 . 1 0 :1:0 
+[s S876 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -779,42 +799,47 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "36681
-[s S879 . 1 `uc 1 . 1 0 :6:0 
+[s S885 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
 "36681
-[u S883 . 1 `S861 1 . 1 0 `S870 1 . 1 0 `S879 1 . 1 0 ]
+[u S889 . 1 `S867 1 . 1 0 `S876 1 . 1 0 `S885 1 . 1 0 ]
 "36681
 "36681
-[v _INTCONbits INTCONbits `VES883  1 e 1 @4082 ]
-[u S1708 . 8 `[8]uc 1 c 8 0 `ui 1 i 2 0 ]
-"11 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\can_command.c
-[v _data data `S1708  1 e 8 0 ]
-"24 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\L6470.c
+[v _INTCONbits INTCONbits `VES889  1 e 1 @4082 ]
+"15 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+[v _data data `[8]uc  1 e 8 0 ]
+"24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _Busy Busy `i  1 e 2 0 ]
-[s S127 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"94 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\main.c
-[u S139 . 14 `S127 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v _rxMessage rxMessage `S139  1 e 14 0 ]
-"96
+[s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+"102 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
+[u S220 . 14 `S208 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v _txMessage txMessage `S220  1 e 14 0 ]
+"103
+[v _rxMessage rxMessage `S220  1 e 14 0 ]
+"105
+[v _servo_Flag servo_Flag `uc  1 e 1 0 ]
+"106
 [v _servo_Angle servo_Angle `[2]i  1 e 4 0 ]
-"4 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\servo.c
+"107
+[v _arm_mode_flag arm_mode_flag `i  1 e 2 0 ]
+"4 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
 [v _T1time T1time `ui  1 e 2 0 ]
-"98 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\main.c
+"109 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"162
+"212
 } 0
-"39 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\can_command.c
-[v _can_recieve can_recieve `(v  1 e 1 0 ]
+"57 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+[v _can_recieve can_recieve `(uc  1 e 1 0 ]
 {
-[s S127 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-[u S139 . 14 `S127 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v can_recieve@rxMessage rxMessage `S139  1 p 14 32 ]
-"68
+[s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+[u S220 . 14 `S208 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v can_recieve@rxMessage rxMessage `S220  1 p 14 32 ]
+"81
 } 0
-"24 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\servo.c
+"24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
 [v _ServoOut ServoOut `(v  1 e 1 0 ]
 {
 "25
@@ -846,24 +871,24 @@
 [v ___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"23 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\can_command.c
+"27 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
 {
-"37
+"55
 } 0
-"13
+"17
 [v _L6470_change L6470_change `(ul  1 e 4 0 ]
 {
-"15
+"19
 [v L6470_change@val val `ul  1 a 4 11 ]
-"14
+"18
 [v L6470_change@i i `i  1 a 2 9 ]
-"13
+"17
 [v L6470_change@dt dt `*.39uc  1 p 2 0 ]
 [v L6470_change@num num `i  1 p 2 2 ]
-"21
+"25
 } 0
-"205 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\L6470.c
+"205 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _L6470_Stop L6470_Stop `(v  1 e 1 0 ]
 {
 "207
@@ -871,7 +896,7 @@
 "205
 [v L6470_Stop@mode mode `i  1 p 2 1 ]
 "206
-[v L6470_Stop@F12229 F12229 `[4]uc  1 s 4 F12229 ]
+[v L6470_Stop@F12231 F12231 `[4]uc  1 s 4 F12231 ]
 "213
 } 0
 "174
@@ -893,16 +918,22 @@
 [v L6470_Move@dir dir `uc  1 a 1 22 ]
 "193
 } 0
-"165 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\main.c
+"215
+[v _L6470_CMD L6470_CMD `(v  1 e 1 0 ]
+{
+[v L6470_CMD@command command `i  1 p 2 1 ]
+"220
+} 0
+"215 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
 [v _Wait Wait `(v  1 e 1 0 ]
 {
-"167
+"217
 [v Wait@i i `i  1 a 2 3 ]
-"165
+"215
 [v Wait@num num `ui  1 p 2 0 ]
-"173
+"223
 } 0
-"36 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\SPIlib.c
+"36 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 {
 [v SPI_Init@mode mode `uc  1 a 1 wreg ]
@@ -917,14 +948,14 @@
 [v SPI_Init@mode mode `uc  1 a 1 5 ]
 "79
 } 0
-"62 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\L6470.c
+"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _L6470_Init L6470_Init `(ul  1 e 4 0 ]
 {
 "66
 [v L6470_Init@val val `l  1 a 4 27 ]
 "67
 [v L6470_Init@i i `i  1 a 2 31 ]
-[s S1211 . 2 `uc 1 OSC_SEL 1 0 :3:0 
+[s S1327 . 2 `uc 1 OSC_SEL 1 0 :3:0 
 `uc 1 EXT_CLK 1 0 :1:3 
 `uc 1 SW_MODE 1 0 :1:4 
 `uc 1 EN_VSCPMP 1 0 :1:5 
@@ -935,16 +966,16 @@
 `uc 1 F_PWM_INT 1 1 :3:5 
 ]
 "65
-[u S1221 CONFIG_t 2 `ui 1 DT 2 0 `S1211 1 . 2 0 ]
-[v L6470_Init@config config `S1221  1 a 2 24 ]
-[s S1203 . 1 `uc 1 STEP_SEL 1 0 :3:0 
+[u S1337 CONFIG_t 2 `ui 1 DT 2 0 `S1327 1 . 2 0 ]
+[v L6470_Init@config config `S1337  1 a 2 24 ]
+[s S1319 . 1 `uc 1 STEP_SEL 1 0 :3:0 
 `uc 1 SP 1 0 :1:3 
 `uc 1 SYNC_SEL 1 0 :3:4 
 `uc 1 SYNC_EN 1 0 :1:7 
 ]
 "64
-[u S1208 STEP_MODE_t 1 `uc 1 DT 1 0 `S1203 1 . 1 0 ]
-[v L6470_Init@step_mode step_mode `S1208  1 a 1 26 ]
+[u S1324 STEP_MODE_t 1 `uc 1 DT 1 0 `S1319 1 . 1 0 ]
+[v L6470_Init@step_mode step_mode `S1324  1 a 1 26 ]
 "103
 } 0
 "112
@@ -979,7 +1010,7 @@
 [v CMD_Send@cmd cmd `uc  1 a 1 15 ]
 "55
 } 0
-"119 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\SPIlib.c
+"119 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
 [v _SPI_transfer SPI_transfer `(uc  1 e 1 0 ]
 {
 [v SPI_transfer@dt dt `uc  1 a 1 wreg ]
@@ -988,58 +1019,58 @@
 [v SPI_transfer@dt dt `uc  1 a 1 0 ]
 "125
 } 0
-"61 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\mcc_generated_files/ecan.c
+"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 {
-"145
+"148
 } 0
-"238
+"241
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
 {
-"240
+"243
 [v CAN_receive@returnValue returnValue `uc  1 a 1 21 ]
-[s S127 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"238
-[u S139 . 14 `S127 1 frame 14 0 `[14]uc 1 array 14 0 ]
-[v CAN_receive@tempCanMsg tempCanMsg `*.39S139  1 p 2 19 ]
-"298
+[s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
+"241
+[u S220 . 14 `S208 1 frame 14 0 `[14]uc 1 array 14 0 ]
+[v CAN_receive@tempCanMsg tempCanMsg `*.39S220  1 p 2 19 ]
+"301
 } 0
-"384
+"387
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 s 4 convertReg2StandardCANid ]
 {
 [v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
-"387
+"390
 [v convertReg2StandardCANid@ConvertedID ConvertedID `ul  1 a 4 11 ]
-"386
+"389
 [v convertReg2StandardCANid@returnValue returnValue `ul  1 a 4 7 ]
-"384
+"387
 [v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 wreg ]
 [v convertReg2StandardCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 0 ]
 [v convertReg2StandardCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 a 1 6 ]
-"395
+"398
 } 0
-"363
+"366
 [v _convertReg2ExtendedCANid convertReg2ExtendedCANid `(ul  1 s 4 convertReg2ExtendedCANid ]
 {
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
-"366
+"369
 [v convertReg2ExtendedCANid@ConvertedID ConvertedID `ul  1 a 4 15 ]
-"365
-[v convertReg2ExtendedCANid@returnValue returnValue `ul  1 a 4 9 ]
 "368
+[v convertReg2ExtendedCANid@returnValue returnValue `ul  1 a 4 9 ]
+"371
 [v convertReg2ExtendedCANid@CAN_standardLo_ID_hi3bits CAN_standardLo_ID_hi3bits `uc  1 a 1 14 ]
-"367
+"370
 [v convertReg2ExtendedCANid@CAN_standardLo_ID_lo2bits CAN_standardLo_ID_lo2bits `uc  1 a 1 13 ]
-"363
+"366
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 wreg ]
 [v convertReg2ExtendedCANid@tempRXBn_EIDL tempRXBn_EIDL `uc  1 p 1 0 ]
 [v convertReg2ExtendedCANid@tempRXBn_SIDH tempRXBn_SIDH `uc  1 p 1 1 ]
 [v convertReg2ExtendedCANid@tempRXBn_SIDL tempRXBn_SIDL `uc  1 p 1 2 ]
-"366
+"369
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 8 ]
-"382
+"385
 } 0
-"7 C:\Users\kazuk\Google ドライブ\変身装置\パッチンバンド保持装置\PIC\PIC\band_con.X\servo.c
+"7 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
 [v _InterTimer InterTimer `IIH(v  1 e 1 0 ]
 {
 "21
