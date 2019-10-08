@@ -130,7 +130,7 @@ void ECAN_Initialize(void)
     */
     
   	/**
-	Baud rate: 500kbps
+	Baud rate: 1Mbps
 	System frequency: 16000000
     ECAN clock frequency: 16000000
 	Time quanta: 8

@@ -20288,6 +20288,7 @@ void ServoOut(int angle);
 # 6 "can_command.c" 2
 # 15 "can_command.c"
 unsigned char data[8];
+unsigned long pos;
 
 unsigned long L6470_change(unsigned char *dt, int num){
     int i;
@@ -20323,6 +20324,9 @@ void L6470_command(void){
             L6470_Stop(1);
             L6470_CMD(0xD8);
             break;
+        case 0x06:
+            pos = L6470_GetRegister(0x01,3);
+            break;
         default:
             break;
 
@@ -20337,20 +20341,17 @@ unsigned char can_recieve(uCAN_MSG rxMessage){
 
 
          if(rxMessage.frame.id == 0x102){
-                data[0] = rxMessage.frame.data0 ;
-                data[1] = rxMessage.frame.data1 ;
-                data[2] = rxMessage.frame.data2 ;
-                data[3] = rxMessage.frame.data3 ;
-                data[4] = rxMessage.frame.data4 ;
-                data[5] = rxMessage.frame.data5 ;
-                data[6] = rxMessage.frame.data6 ;
-                data[7] = rxMessage.frame.data7 ;
-                ServoOut(data[1]);
-                L6470_command();}
-
-
-
-
+            data[0] = rxMessage.frame.data0 ;
+            data[1] = rxMessage.frame.data1 ;
+            data[2] = rxMessage.frame.data2 ;
+            data[3] = rxMessage.frame.data3 ;
+            data[4] = rxMessage.frame.data4 ;
+            data[5] = rxMessage.frame.data5 ;
+            data[6] = rxMessage.frame.data6 ;
+            data[7] = rxMessage.frame.data7 ;
+            ServoOut(data[1]);
+            L6470_command();
+         }
      }
      return data;
 }

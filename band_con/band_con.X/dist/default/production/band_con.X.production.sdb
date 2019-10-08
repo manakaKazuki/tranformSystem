@@ -29,11 +29,11 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"17 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"18 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _L6470_change L6470_change `(ul  1 e 4 0 ]
-"27
+"28
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
-"57
+"61
 [v _can_recieve can_recieve `(uc  1 e 1 0 ]
 "27 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _CMD_Send CMD_Send `(v  1 e 1 0 ]
@@ -810,6 +810,8 @@
 [v _INTCONbits INTCONbits `VES889  1 e 1 @4082 ]
 "15 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _data data `[8]uc  1 e 8 0 ]
+"16
+[v _pos pos `ul  1 e 4 0 ]
 "24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _Busy Busy `i  1 e 2 0 ]
 [s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
@@ -831,13 +833,13 @@
 {
 "212
 } 0
-"57 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"61 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _can_recieve can_recieve `(uc  1 e 1 0 ]
 {
 [s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
 [u S220 . 14 `S208 1 frame 14 0 `[14]uc 1 array 14 0 ]
 [v can_recieve@rxMessage rxMessage `S220  1 p 14 32 ]
-"81
+"82
 } 0
 "24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
 [v _ServoOut ServoOut `(v  1 e 1 0 ]
@@ -871,22 +873,22 @@
 [v ___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"27 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"28 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
 {
-"55
+"59
 } 0
-"17
+"18
 [v _L6470_change L6470_change `(ul  1 e 4 0 ]
 {
-"19
+"20
 [v L6470_change@val val `ul  1 a 4 11 ]
-"18
+"19
 [v L6470_change@i i `i  1 a 2 9 ]
-"17
+"18
 [v L6470_change@dt dt `*.39uc  1 p 2 0 ]
 [v L6470_change@num num `i  1 p 2 2 ]
-"25
+"26
 } 0
 "205 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
 [v _L6470_Stop L6470_Stop `(v  1 e 1 0 ]
