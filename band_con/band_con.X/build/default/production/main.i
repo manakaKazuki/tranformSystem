@@ -20951,7 +20951,7 @@ unsigned char can_recieve(uCAN_MSG rxMessage);
 # 19 "./servo.h"
 void ServoOut(int angle);
 # 87 "main.c" 2
-# 99 "main.c"
+# 100 "main.c"
 void Wait(unsigned int num) ;
 
 
@@ -20959,8 +20959,9 @@ uCAN_MSG txMessage ;
 uCAN_MSG rxMessage ;
 int *data;
 unsigned char servo_Flag = 0;
-int servo_Angle[2] ={60,120};
-int arm_mode_flag = 0;
+int servo_Angle[2] ={0,80};
+int mode = 0;
+int direction = 0;
 
 void main(void) {
 
@@ -21003,8 +21004,9 @@ void main(void) {
 
     Wait(300) ;
 
+
     while(PORTBbits.RB5){
-        L6470_Run(0,30000);
+        L6470_Run(0,10000);
     }
     L6470_Stop(1);
     L6470_CMD(0xD8);
@@ -21015,53 +21017,93 @@ void main(void) {
     PORTCbits.RC2 = 0;
 
     while(1) {
-        if(PORTAbits.RA6 == 0){
-            if(arm_mode_flag == 1){
-                PORTCbits.RC2 = 1;
-                if(servo_Flag == 1){
-                    servo_Flag = 0;
-                }else{
-                    servo_Flag = 1;
+        switch(mode){
+
+            case 0:
+                if(PORTBbits.RB5 == 0 && 0){
+                   L6470_Stop(1);
                 }
+                mode = 1;
+                break;
+
+            case 1:
+                if(PORTAbits.RA6 == 0){
+                    Wait(20);
+                    if(PORTAbits.RA6 == 0){
+                        PORTCbits.RC2 = 1;
+                        if(servo_Flag == 1){
+                            servo_Flag = 0;
+                        }else{
+                            servo_Flag = 1;
+                        }
+                        mode = 4;
+                    }else{
+                        mode = 3;
+                    }
+
+                }else{
+                    PORTCbits.RC2 = 0;
+                    Wait(1);
+                    mode = 2;
+                }
+                break;
+
+
+            case 2:
+
+                if(PORTAbits.RA7 == 0){
+                    direction = 1;
+                    Wait(1);
+                    mode = 5;
+                }else if(PORTCbits.RC0 == 0){
+                    if(PORTBbits.RB5 == 0){
+                        mode = 0;
+                        break;
+                    }
+                    direction = 0;
+                    Wait(1);
+                    mode = 5;
+                }else{
+                    L6470_Stop(1);
+                    mode = 3;
+                }
+                break;
+
+
+            case 3:
+                if (CAN_receive(&rxMessage)) {
+
+                    PORTCbits.RC2 = 1;
+                    data = can_recieve(rxMessage);
+                    txMessage.frame.idType = 1 ;
+                    txMessage.frame.id = 0x001 ;
+                    txMessage.frame.dlc = 8 ;
+                    txMessage.frame.data0 = data[0];
+                    txMessage.frame.data1 = data[1];
+                    txMessage.frame.data2 = data[2];
+                    txMessage.frame.data3 = data[3];
+                    txMessage.frame.data4 = data[4];
+                    txMessage.frame.data5 = data[5];
+                    txMessage.frame.data6 = data[6];
+                    txMessage.frame.data7 = data[7];
+
+                }
+                mode = 0;
+                Wait(20);
+                break;
+
+
+            case 4:
                 ServoOut(servo_Angle[servo_Flag]);
-                arm_mode_flag = 0;
-            }
-            Wait(1);
-        }else{
-            PORTCbits.RC2 = 0;
-            arm_mode_flag = 1;
-            Wait(1);
-        }
+                Wait(1);
+                mode = 0;
+                break;
 
-        if(PORTAbits.RA7 == 0){
-            L6470_Run(1,30000);
-        }else if(PORTCbits.RC0 == 0){
-            if(PORTBbits.RB5){
-                L6470_Run(0,30000);
-            }else{
-                L6470_Stop(1);
-            }
-        }else{
-            L6470_Stop(1);
-        }
 
-        if (CAN_receive(&rxMessage)) {
-
-            PORTCbits.RC2 = 1;
-            data = can_recieve(rxMessage);
-            txMessage.frame.idType = 1 ;
-            txMessage.frame.id = 0x001 ;
-            txMessage.frame.dlc = 8 ;
-            txMessage.frame.data0 = data[0];
-            txMessage.frame.data1 = data[1];
-            txMessage.frame.data2 = data[2];
-            txMessage.frame.data3 = data[3];
-            txMessage.frame.data4 = data[4];
-            txMessage.frame.data5 = data[5];
-            txMessage.frame.data6 = data[6];
-            txMessage.frame.data7 = data[7];
-
-            Wait(50);
+            case 5:
+                L6470_Run(direction,10000);
+                mode = 0;
+                break;
         }
     }
 

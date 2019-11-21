@@ -17,7 +17,7 @@
 #endif
 
 #define STOP_SW PORTBbits.RB5
-#define CAN_ID 0x102
+#define CAN_ID 0x005
 
 unsigned char can_recieve(uCAN_MSG rxMessage);
 

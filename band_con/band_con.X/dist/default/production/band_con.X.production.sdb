@@ -29,13 +29,13 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"18 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"18 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\can_command.c
 [v _L6470_change L6470_change `(ul  1 e 4 0 ]
 "28
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
 "61
 [v _can_recieve can_recieve `(uc  1 e 1 0 ]
-"27 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
+"27 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\L6470.c
 [v _CMD_Send CMD_Send `(v  1 e 1 0 ]
 "62
 [v _L6470_Init L6470_Init `(ul  1 e 4 0 ]
@@ -49,7 +49,7 @@
 [v _L6470_Stop L6470_Stop `(v  1 e 1 0 ]
 "215
 [v _L6470_CMD L6470_CMD `(v  1 e 1 0 ]
-"145 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470_SPI.c
+"145 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\L6470_SPI.c
 [v _L6470_transfer L6470_transfer `(v  1 e 1 0 ]
 "163
 [v _L6470_send L6470_send `(v  1 e 1 0 ]
@@ -61,11 +61,11 @@
 [v _L6470_getparam L6470_getparam `(l  1 e 4 0 ]
 "202
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
-"109 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
+"111 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"215
+"258
 [v _Wait Wait `(v  1 e 1 0 ]
-"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\mcc_generated_files/ecan.c
+"62 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 "241
 [v _CAN_receive CAN_receive `(uc  1 e 1 0 ]
@@ -75,11 +75,11 @@
 [v _convertReg2StandardCANid convertReg2StandardCANid `(ul  1 s 4 convertReg2StandardCANid ]
 "400
 [v _convertCANid2Reg convertCANid2Reg `(v  1 s 1 convertCANid2Reg ]
-"7 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
+"7 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\servo.c
 [v _InterTimer InterTimer `IIH(v  1 e 1 0 ]
 "24
 [v _ServoOut ServoOut `(v  1 e 1 0 ]
-"36 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
+"36 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\SPIlib.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 "119
 [v _SPI_transfer SPI_transfer `(uc  1 e 1 0 ]
@@ -639,15 +639,15 @@
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "34720
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
-[s S1494 . 1 `uc 1 . 1 0 :2:0 
+[s S1495 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_NOT_W 1 0 :1:2 
 ]
 "34797
-[s S1497 . 1 `uc 1 . 1 0 :5:0 
+[s S1498 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 D_NOT_A 1 0 :1:5 
 ]
 "34797
-[s S1500 . 1 `uc 1 BF 1 0 :1:0 
+[s S1501 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -657,62 +657,62 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "34797
-[s S1509 . 1 `uc 1 . 1 0 :2:0 
+[s S1510 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
 "34797
-[s S1514 . 1 `uc 1 . 1 0 :2:0 
+[s S1515 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
 "34797
-[s S1519 . 1 `uc 1 . 1 0 :2:0 
+[s S1520 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_WRITE 1 0 :1:2 
 ]
 "34797
-[s S1522 . 1 `uc 1 . 1 0 :5:0 
+[s S1523 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_ADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1525 . 1 `uc 1 . 1 0 :2:0 
+[s S1526 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1530 . 1 `uc 1 . 1 0 :2:0 
+[s S1531 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
 "34797
-[s S1535 . 1 `uc 1 . 1 0 :2:0 
+[s S1536 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
 "34797
-[s S1541 . 1 `uc 1 . 1 0 :2:0 
+[s S1542 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
 `uc 1 STOP 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
 "34797
-[s S1547 . 1 `uc 1 . 1 0 :2:0 
+[s S1548 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 NOT_A 1 0 :1:5 
 ]
 "34797
-[u S1552 . 1 `S1494 1 . 1 0 `S1497 1 . 1 0 `S1500 1 . 1 0 `S1509 1 . 1 0 `S1514 1 . 1 0 `S1519 1 . 1 0 `S1522 1 . 1 0 `S1525 1 . 1 0 `S1530 1 . 1 0 `S1535 1 . 1 0 `S1541 1 . 1 0 `S1547 1 . 1 0 ]
+[u S1553 . 1 `S1495 1 . 1 0 `S1498 1 . 1 0 `S1501 1 . 1 0 `S1510 1 . 1 0 `S1515 1 . 1 0 `S1520 1 . 1 0 `S1523 1 . 1 0 `S1526 1 . 1 0 `S1531 1 . 1 0 `S1536 1 . 1 0 `S1542 1 . 1 0 `S1548 1 . 1 0 ]
 "34797
 "34797
-[v _SSPSTATbits SSPSTATbits `VES1552  1 e 1 @4039 ]
+[v _SSPSTATbits SSPSTATbits `VES1553  1 e 1 @4039 ]
 "34952
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "35022
@@ -808,32 +808,34 @@
 "36681
 "36681
 [v _INTCONbits INTCONbits `VES889  1 e 1 @4082 ]
-"15 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"15 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\can_command.c
 [v _data data `[8]uc  1 e 8 0 ]
 "16
 [v _pos pos `ul  1 e 4 0 ]
-"24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
+"24 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\L6470.c
 [v _Busy Busy `i  1 e 2 0 ]
 [s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
-"102 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
+"103 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\main.c
 [u S220 . 14 `S208 1 frame 14 0 `[14]uc 1 array 14 0 ]
 [v _txMessage txMessage `S220  1 e 14 0 ]
-"103
+"104
 [v _rxMessage rxMessage `S220  1 e 14 0 ]
-"105
-[v _servo_Flag servo_Flag `uc  1 e 1 0 ]
 "106
-[v _servo_Angle servo_Angle `[2]i  1 e 4 0 ]
+[v _servo_Flag servo_Flag `uc  1 e 1 0 ]
 "107
-[v _arm_mode_flag arm_mode_flag `i  1 e 2 0 ]
-"4 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
+[v _servo_Angle servo_Angle `[2]i  1 e 4 0 ]
+"108
+[v _mode mode `i  1 e 2 0 ]
+"109
+[v _direction direction `i  1 e 2 0 ]
+"4 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\servo.c
 [v _T1time T1time `ui  1 e 2 0 ]
-"109 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
+"111 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"212
+"255
 } 0
-"61 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"61 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\can_command.c
 [v _can_recieve can_recieve `(uc  1 e 1 0 ]
 {
 [s S208 . 14 `uc 1 idType 1 0 `ul 1 id 4 1 `uc 1 dlc 1 5 `uc 1 data0 1 6 `uc 1 data1 1 7 `uc 1 data2 1 8 `uc 1 data3 1 9 `uc 1 data4 1 10 `uc 1 data5 1 11 `uc 1 data6 1 12 `uc 1 data7 1 13 ]
@@ -841,7 +843,7 @@
 [v can_recieve@rxMessage rxMessage `S220  1 p 14 32 ]
 "82
 } 0
-"24 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
+"24 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\servo.c
 [v _ServoOut ServoOut `(v  1 e 1 0 ]
 {
 "25
@@ -873,7 +875,7 @@
 [v ___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"28 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\can_command.c
+"28 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\can_command.c
 [v _L6470_command L6470_command `(v  1 e 1 0 ]
 {
 "59
@@ -890,7 +892,7 @@
 [v L6470_change@num num `i  1 p 2 2 ]
 "26
 } 0
-"205 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
+"205 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\L6470.c
 [v _L6470_Stop L6470_Stop `(v  1 e 1 0 ]
 {
 "207
@@ -926,16 +928,16 @@
 [v L6470_CMD@command command `i  1 p 2 1 ]
 "220
 } 0
-"215 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\main.c
+"258 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\main.c
 [v _Wait Wait `(v  1 e 1 0 ]
 {
-"217
+"260
 [v Wait@i i `i  1 a 2 3 ]
-"215
+"258
 [v Wait@num num `ui  1 p 2 0 ]
-"223
+"266
 } 0
-"36 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
+"36 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\SPIlib.c
 [v _SPI_Init SPI_Init `(v  1 e 1 0 ]
 {
 [v SPI_Init@mode mode `uc  1 a 1 wreg ]
@@ -950,14 +952,14 @@
 [v SPI_Init@mode mode `uc  1 a 1 5 ]
 "79
 } 0
-"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\L6470.c
+"62 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\L6470.c
 [v _L6470_Init L6470_Init `(ul  1 e 4 0 ]
 {
 "66
 [v L6470_Init@val val `l  1 a 4 27 ]
 "67
 [v L6470_Init@i i `i  1 a 2 31 ]
-[s S1327 . 2 `uc 1 OSC_SEL 1 0 :3:0 
+[s S1328 . 2 `uc 1 OSC_SEL 1 0 :3:0 
 `uc 1 EXT_CLK 1 0 :1:3 
 `uc 1 SW_MODE 1 0 :1:4 
 `uc 1 EN_VSCPMP 1 0 :1:5 
@@ -968,16 +970,16 @@
 `uc 1 F_PWM_INT 1 1 :3:5 
 ]
 "65
-[u S1337 CONFIG_t 2 `ui 1 DT 2 0 `S1327 1 . 2 0 ]
-[v L6470_Init@config config `S1337  1 a 2 24 ]
-[s S1319 . 1 `uc 1 STEP_SEL 1 0 :3:0 
+[u S1338 CONFIG_t 2 `ui 1 DT 2 0 `S1328 1 . 2 0 ]
+[v L6470_Init@config config `S1338  1 a 2 24 ]
+[s S1320 . 1 `uc 1 STEP_SEL 1 0 :3:0 
 `uc 1 SP 1 0 :1:3 
 `uc 1 SYNC_SEL 1 0 :3:4 
 `uc 1 SYNC_EN 1 0 :1:7 
 ]
 "64
-[u S1324 STEP_MODE_t 1 `uc 1 DT 1 0 `S1319 1 . 1 0 ]
-[v L6470_Init@step_mode step_mode `S1324  1 a 1 26 ]
+[u S1325 STEP_MODE_t 1 `uc 1 DT 1 0 `S1320 1 . 1 0 ]
+[v L6470_Init@step_mode step_mode `S1325  1 a 1 26 ]
 "103
 } 0
 "112
@@ -1012,7 +1014,7 @@
 [v CMD_Send@cmd cmd `uc  1 a 1 15 ]
 "55
 } 0
-"119 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\SPIlib.c
+"119 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\SPIlib.c
 [v _SPI_transfer SPI_transfer `(uc  1 e 1 0 ]
 {
 [v SPI_transfer@dt dt `uc  1 a 1 wreg ]
@@ -1021,7 +1023,7 @@
 [v SPI_transfer@dt dt `uc  1 a 1 0 ]
 "125
 } 0
-"62 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\mcc_generated_files/ecan.c
+"62 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\mcc_generated_files/ecan.c
 [v _ECAN_Initialize ECAN_Initialize `(v  1 e 1 0 ]
 {
 "148
@@ -1072,7 +1074,7 @@
 [v convertReg2ExtendedCANid@tempRXBn_EIDH tempRXBn_EIDH `uc  1 a 1 8 ]
 "385
 } 0
-"7 C:\Users\kazuk\Desktop\tranformSystem\band_con\band_con.X\servo.c
+"7 C:\Users\kazuk\Desktop\transform_System\band_con\band_con.X\servo.c
 [v _InterTimer InterTimer `IIH(v  1 e 1 0 ]
 {
 "21

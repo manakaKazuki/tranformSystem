@@ -1528,8 +1528,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1547 ]
 {
 "47
-[; ;can_command.c: 47:                 L6470_Run(0,30000);
-[e ( _L6470_Run (2 , -> -> 0 `i `uc -> -> -> 30000 `i `l `ul ]
+[; ;can_command.c: 47:                 L6470_Run(0,20000);
+[e ( _L6470_Run (2 , -> -> 0 `i `uc -> -> -> 20000 `i `l `ul ]
 "48
 [; ;can_command.c: 48:             }
 }
@@ -1592,8 +1592,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> . . _rxMessage 0 0 `i -> 1 `i 1552  ]
 {
 "68
-[; ;can_command.c: 68:          if(rxMessage.frame.id == 0x102){
-[e $ ! == . . _rxMessage 0 1 -> -> -> 258 `i `l `ul 1553  ]
+[; ;can_command.c: 68:          if(rxMessage.frame.id == 0x005){
+[e $ ! == . . _rxMessage 0 1 -> -> -> 5 `i `l `ul 1553  ]
 {
 "69
 [; ;can_command.c: 69:             data[0] = rxMessage.frame.data0 ;

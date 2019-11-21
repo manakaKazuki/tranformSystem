@@ -44,7 +44,7 @@ void L6470_command(void){
             break;
         case 0x05:
             while(STOP_SW){
-                L6470_Run(Reverse,30000);
+                L6470_Run(Reverse,20000);
             }
             L6470_Stop(HARDSTOP);
             L6470_CMD(L6470_RESET_POS);

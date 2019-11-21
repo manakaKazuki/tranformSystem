@@ -95,6 +95,7 @@
 #define ARM_SW_DOWN PORTCbits.RC0
 
 
+
 //  プロトタイプの宣言
 void Wait(unsigned int num) ;
 
@@ -103,8 +104,9 @@ uCAN_MSG txMessage ;               // 送信メッセージバッファ
 uCAN_MSG rxMessage ;               // 受信メッセージバッファ
 int *data;
 unsigned char servo_Flag = 0;
-int servo_Angle[2] ={60,120};
-int arm_mode_flag = 0;
+int servo_Angle[2] ={0,80};
+int mode = 0;
+int direction = Reverse;
 
 void main(void) {
     
@@ -147,8 +149,9 @@ void main(void) {
     
     Wait(300) ;              // 3秒後に開始
     
+    //原点復帰
     while(STOP_SW){
-        L6470_Run(Reverse,30000);
+        L6470_Run(Reverse,10000);
     }
     L6470_Stop(HARDSTOP);
     L6470_CMD(L6470_RESET_POS);
@@ -159,53 +162,93 @@ void main(void) {
     LED_PIN = 0;
     
     while(1) {
-        if(ARM_SW_MODE == 0){
-            if(arm_mode_flag == 1){
-                LED_PIN = 1;
-                if(servo_Flag == 1){
-                    servo_Flag = 0;
-                }else{
-                    servo_Flag = 1;
+        switch(mode){
+            ////////////////////////////////////
+            case 0://エンドストップ検知
+                if(STOP_SW == 0 && Reverse){
+                   L6470_Stop(HARDSTOP);
                 }
+                mode = 1;
+                break;
+            ////////////////////////////////////
+            case 1: //ハンド：スイッチ操作
+                if(ARM_SW_MODE == 0){
+                    Wait(20);
+                    if(ARM_SW_MODE == 0){
+                        LED_PIN = 1;
+                        if(servo_Flag == 1){
+                            servo_Flag = 0;
+                        }else{
+                            servo_Flag = 1;
+                        }
+                        mode = 4;
+                    }else{
+                        mode = 3;
+                    }                                
+                    
+                }else{
+                    LED_PIN = 0;
+                    Wait(1);
+                    mode = 2;  
+                }
+                break;
+            
+            ////////////////////////////////////
+            case 2: //アーム：スイッチ操作
+                
+                if(ARM_SW_UP == 0){
+                    direction = Forward;
+                    Wait(1);
+                    mode = 5;
+                }else if(ARM_SW_DOWN == 0){
+                    if(STOP_SW == 0){                    
+                        mode = 0;
+                        break;
+                    }
+                    direction  = Reverse;
+                    Wait(1);
+                    mode = 5;
+                }else{
+                    L6470_Stop(HARDSTOP);
+                    mode = 3;
+                }
+                break;
+                
+            ////////////////////////////////////
+            case 3://CAN受信
+                if (CAN_receive(&rxMessage)) {
+                    // 受信したら処理を行う
+                    LED_PIN = 1;
+                    data = can_recieve(rxMessage);
+                    txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B ;
+                    txMessage.frame.id     = 0x001 ;
+                    txMessage.frame.dlc    = 8 ;  // リモートフレーム送信要求
+                    txMessage.frame.data0  = data[0];
+                    txMessage.frame.data1  = data[1];
+                    txMessage.frame.data2  = data[2];
+                    txMessage.frame.data3  = data[3];
+                    txMessage.frame.data4  = data[4];
+                    txMessage.frame.data5  = data[5];
+                    txMessage.frame.data6  = data[6];
+                    txMessage.frame.data7  = data[7];
+                    //CAN_transmit(&txMessage) ;
+                }
+                mode = 0;
+                Wait(20);
+                break;
+            
+            ////////////////////////////////////
+            case 4:
                 ServoOut(servo_Angle[servo_Flag]);
-                arm_mode_flag = 0;
-            }
-            Wait(1);
-        }else{
-            LED_PIN = 0;
-            arm_mode_flag = 1;
-            Wait(1);
-        }
-        
-        if(ARM_SW_UP == 0){           
-            L6470_Run(Forward,30000);
-        }else if(ARM_SW_DOWN == 0){
-            if(STOP_SW){
-                L6470_Run(Reverse,30000);                
-            }else{
-                L6470_Stop(HARDSTOP);
-            }
-        }else{
-            L6470_Stop(HARDSTOP);
-        }
-        
-        if (CAN_receive(&rxMessage)) {
-            // 受信したら処理を行う
-            LED_PIN = 1;
-            data = can_recieve(rxMessage);
-            txMessage.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B ;
-            txMessage.frame.id     = 0x001 ;
-            txMessage.frame.dlc    = 8 ;  // リモートフレーム送信要求
-            txMessage.frame.data0  = data[0];
-            txMessage.frame.data1  = data[1];
-            txMessage.frame.data2  = data[2];
-            txMessage.frame.data3  = data[3];
-            txMessage.frame.data4  = data[4];
-            txMessage.frame.data5  = data[5];
-            txMessage.frame.data6  = data[6];
-            txMessage.frame.data7  = data[7];
-            //CAN_transmit(&txMessage) ;
-            Wait(50);
+                Wait(1);
+                mode = 0;
+                break;
+            
+            ////////////////////////////////////
+            case 5:
+                L6470_Run(direction,10000);
+                mode = 0;
+                break;
         }
     }
     

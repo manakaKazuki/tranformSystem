@@ -20319,7 +20319,7 @@ void L6470_command(void){
             break;
         case 0x05:
             while(PORTBbits.RB5){
-                L6470_Run(0,30000);
+                L6470_Run(0,20000);
             }
             L6470_Stop(1);
             L6470_CMD(0xD8);
@@ -20340,7 +20340,7 @@ unsigned char can_recieve(uCAN_MSG rxMessage){
      if (rxMessage.frame.idType == 1) {
 
 
-         if(rxMessage.frame.id == 0x102){
+         if(rxMessage.frame.id == 0x005){
             data[0] = rxMessage.frame.data0 ;
             data[1] = rxMessage.frame.data1 ;
             data[2] = rxMessage.frame.data2 ;

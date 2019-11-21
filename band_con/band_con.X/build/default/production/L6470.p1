@@ -1609,14 +1609,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;L6470.c: 83:      CMD_Send(0x09,0xFF,1) ;
 [e ( _CMD_Send (3 , , -> -> 9 `i `uc -> -> -> 255 `i `l `ul -> 1 `i ]
 "84
-[; ;L6470.c: 84:      CMD_Send(0x0A,0xF0,1) ;
-[e ( _CMD_Send (3 , , -> -> 10 `i `uc -> -> -> 240 `i `l `ul -> 1 `i ]
+[; ;L6470.c: 84:      CMD_Send(0x0A,0x80,1) ;
+[e ( _CMD_Send (3 , , -> -> 10 `i `uc -> -> -> 128 `i `l `ul -> 1 `i ]
 "85
 [; ;L6470.c: 85:      CMD_Send(0x0B,0xF0,1) ;
 [e ( _CMD_Send (3 , , -> -> 11 `i `uc -> -> -> 240 `i `l `ul -> 1 `i ]
 "86
-[; ;L6470.c: 86:      CMD_Send(0x0C,0xF0,1) ;
-[e ( _CMD_Send (3 , , -> -> 12 `i `uc -> -> -> 240 `i `l `ul -> 1 `i ]
+[; ;L6470.c: 86:      CMD_Send(0x0C,0x80,1) ;
+[e ( _CMD_Send (3 , , -> -> 12 `i `uc -> -> -> 128 `i `l `ul -> 1 `i ]
 "87
 [; ;L6470.c: 87:      CMD_Send(0x13,0x0F,1) ;
 [e ( _CMD_Send (3 , , -> -> 19 `i `uc -> -> -> 15 `i `l `ul -> 1 `i ]
